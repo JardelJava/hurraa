@@ -6,7 +6,7 @@
          <span class="icon-bar"></span>
          <span class="icon-bar"></span>
        </a>
-       <img class="pull-left" src="img/logo.png" width="40px" height="40px" style="margin-right: 10px;margin-top: 3px;">
+       <img class="pull-left" src="img/logo_transp.png" width="40px" height="40px" style="margin-right: 10px;margin-top: 3px;">
        <a class="brand" href="/p">Hurraa !</a>
        <div class="nav-collapse collapse ">
          <ul class="nav pull-right">
