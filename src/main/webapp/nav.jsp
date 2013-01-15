@@ -16,10 +16,6 @@
          <ul class="nav pull-right">
             <li><a href="#">Bem vindo(a): </a></li>
          </ul>
-         <form action="?" method="post" class="navbar-search pull-right">
-             <input type="text" name="keyword" id="keyword" class="search-query" placeholder="busca...">
-             <button type="submit" class="btn" style="margin-top: 1px;">Buscar</button>
-         </form>
        </div><!--/.nav-collapse -->
      </div>
    </div>
