@@ -5,7 +5,7 @@
 
 	<div class="container" style="width: 98%;">
 
-		<button type="button" class="btn" onclick="teste1()">teste1</button>
+		<button type="button" class="btn" onclick="teste()">teste1</button>
 
 		<form>
 			<legend>teste</legend>
@@ -13,7 +13,7 @@
 			<div class="row-fluid">
 				<div class="span3">
 
-					<label>Nome</label> 
+					<label>Nome</label>
 					<input type="text" placeholder="informe o telefone aqui... teste"> <label>Telefone</label>
 
 				</div>
