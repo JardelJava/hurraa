@@ -18,7 +18,7 @@
 
 				</div>
 			</div>
-			<button type="submit" class="btn">Salvar</button>
+			<button type="button" id="salvar" class="btn">Salvar</button>
 		</form>
 
 		<hr>
