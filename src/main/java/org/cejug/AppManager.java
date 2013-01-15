@@ -1,25 +1,28 @@
 package org.cejug;
 
-import org.mentawai.ajax.renderer.JsonRenderer;
-import org.mentawai.core.ApplicationManager;
-import org.mentawai.filter.AjaxFilter;
+import org.mentawai.core.MultiApplicationManager;
 
 /**
- * Default Mentawai Application Manager class AppManager.
- * 
+ * MultiApplicationManager class AppManager.
+ *
+ * Helps the organization and separation of macro modules.
+ *
  * @author helio frota
  *
  */
-public class AppManager extends ApplicationManager {
+public class AppManager extends MultiApplicationManager {
 
-	/**
-	 * Default Mentawai method to load all global filters.
-	 */
-	@Override
-    public void loadFilters() {
-        filter(new AjaxFilter(AJAX));
-        on(AJAX, ajax(new JsonRenderer()));
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void registerManagers() {
+
+        // Global configuration.
+        register(ConfigManager.class);
+
+        // Hurraa macro modules.
+        register(AdministracaoManager.class);
     }
-	
-	
+
 }
