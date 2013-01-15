@@ -10,6 +10,5 @@
       body { padding-top: 60px; padding-bottom: 40px; }
     </style>
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="img/16x.png">
   </head>
-  

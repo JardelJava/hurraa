@@ -1,4 +1,4 @@
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top navbar-inverse">
    <div class="navbar-inner">
      <div class="container-fluid">
        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -6,7 +6,7 @@
          <span class="icon-bar"></span>
          <span class="icon-bar"></span>
        </a>
-       <img class="pull-left" src="img/logo_transp.png" width="40px" height="40px" style="margin-right: 10px;margin-top: 3px;">
+       <img class="pull-left" src="img/48x.png" width="40px" height="40px" style="margin-right: 10px;margin-top: 3px;">
        <a class="brand" href="/p">Hurraa !</a>
        <div class="nav-collapse collapse ">
          <ul class="nav pull-right">
