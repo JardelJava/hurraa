@@ -4,7 +4,7 @@
  */
 var teste = function() {
   $.ajax({
-    url : 'FabricanteAction.teste.mtw',
+    url : 'FabricanteAction.allFabricantes.mtw',
     success : function(r) {
       console.log(r.responseText);
     }
