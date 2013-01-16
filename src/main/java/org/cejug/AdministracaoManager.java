@@ -1,6 +1,7 @@
 package org.cejug;
 
-import org.cejug.action.administracao.FabricanteAction;
+import org.cejug.action.administracao.FabricantesAction;
+import org.cejug.helper.ActionPaths;
 import org.mentawai.core.ApplicationManager;
 
 /**
@@ -15,7 +16,7 @@ public class AdministracaoManager extends ApplicationManager {
 	@Override
 	public void loadActions() {
 
-		action(FabricanteAction.class);
+		action(FabricantesAction.class).fwdOk(ActionPaths.fabricantes);
 
 	}
 
