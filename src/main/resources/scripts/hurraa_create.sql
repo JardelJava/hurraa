@@ -55,7 +55,7 @@ INSERT INTO fabricante VALUES (40, 'Yamaha', 1);
 INSERT INTO fabricante VALUES (41, 'CP Eletronica', 1);
 INSERT INTO fabricante VALUES (42, 'Kingston', 1);
 INSERT INTO fabricante VALUES (43, 'Encore', 1);
-INSERT INTO fabricante VALUES (44, 'G??nius', 1);
+INSERT INTO fabricante VALUES (44, 'Genius', 1);
 INSERT INTO fabricante VALUES (45, 'Planet', 1);
 INSERT INTO fabricante VALUES (46, 'Inovar', 1);
 INSERT INTO fabricante VALUES (47, 'InFocus', 1);
@@ -109,7 +109,7 @@ INSERT INTO fabricante VALUES (100, 'Borland', 2);
 INSERT INTO fabricante VALUES (101, 'Logic Works', 2);
 INSERT INTO fabricante VALUES (103, 'Safer-Networking', 2);
 INSERT INTO fabricante VALUES (104, 'CM Data', 2);
-INSERT INTO fabricante VALUES (105, 'MACECRAFT SOFTWARE', 2);
+INSERT INTO fabricante VALUES (105, 'Macecraft Software', 2);
 INSERT INTO fabricante VALUES (106, 'LeaderShip', 1);
 INSERT INTO fabricante VALUES (107, 'Justsoft', 2);
 INSERT INTO fabricante VALUES (108, 'Xerox', 3);
@@ -202,6 +202,17 @@ CREATE TABLE tempo_garantia (
   tempo_meses int(4)  NOT NULL
 );
 
+CREATE TABLE polegada (
+  id   serial      PRIMARY KEY,
+  nome varchar(30) NOT NULL
+);
+
+CREATE TABLE situacao_equipamento (
+  id        serial      PRIMARY KEY,
+  nome      varchar(20) NOT NULL,
+  descricao varchar(200)
+);
+
 CREATE TABLE equipamento (
   id               serial       PRIMARY KEY,
   --comp_inv int(6) NOT NULL default '0',
@@ -231,9 +242,9 @@ CREATE TABLE equipamento (
   tipo_equipamento integer      NOT NULL,
   --comp_tipo_imp int(4) default NULL,
   --comp_resolucao int(4) default NULL,
-  --comp_polegada int(4) default NULL,
+  polegada         integer,
   fabricante       integer      NOT NULL,
-  --comp_situac int(4) default NULL,
+  situacao         integer,
   reitoria         integer,
   tipo_garantia    integer,
   tempo_garantia   integer,
@@ -253,6 +264,11 @@ CREATE TABLE sistema (
   --KEY sis_status (sis_status)
 );
 
+CREATE TABLE categoria_software (
+  id        serial      PRIMARY KEY,
+  descricao varchar(30) NOT NULL
+);
+
 CREATE TABLE licenca_software (
   id        serial      PRIMARY KEY,
   descricao varchar(30) NOT NULL
@@ -263,7 +279,7 @@ CREATE TABLE software (
   fabricante  integer     NOT NULL,
   descricao   varchar(30) NOT NULL,
   versao      varchar(10) NOT NULL,
-  --soft_cat int(4) NOT NULL default '0',
+  categoria   integer     NOT NULL,
   licenca     integer     NOT NULL,
   qtd_licenca int(4),
   fornecedor  integer,
@@ -374,20 +390,6 @@ CREATE TABLE categoriaXproblema_sistemas (
   PRIMARY KEY  (prob_id),
   KEY ctps_id (ctps_id,prob_id)
 )   ;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela categorias
---
-
-CREATE TABLE categorias (
-  cat_cod int(4) NOT NULL auto_increment,
-  cat_desc varchar(30) NOT NULL default '',
-  PRIMARY KEY  (cat_cod)
-)   COMMENT='Tabela de categoria de softwares';
-
--- --------------------------------------------------------
 
 --
 -- Estrutura da tabela emprestimos
@@ -579,19 +581,6 @@ CREATE TABLE permissoes (
   KEY perm_area (perm_area,perm_modulo,perm_flag)
 )   COMMENT='Tabela para permissoes das ??reas';
 
--- --------------------------------------------------------
-
---
--- Estrutura da tabela polegada
---
-
-CREATE TABLE polegada (
-  pole_cod int(4) NOT NULL auto_increment,
-  pole_nome varchar(30) NOT NULL default '',
-  PRIMARY KEY  (pole_cod),
-  KEY pole_cod (pole_cod)
-)   COMMENT='Tabela de polegadas de monitores de v??deo';
-
 --
 -- Estrutura da tabela prioridades
 --
@@ -634,19 +623,6 @@ CREATE TABLE resolucao (
   PRIMARY KEY  (resol_cod),
   KEY resol_cod (resol_cod)
 )   COMMENT='Tabela de resolu????es para scanners';
-
--- --------------------------------------------------------
-
-
-CREATE TABLE situacao (
-  situac_cod int(4) NOT NULL auto_increment,
-  situac_nome varchar(20) NOT NULL default '',
-  situac_desc varchar(200) default NULL,
-  PRIMARY KEY  (situac_cod),
-  KEY situac_cod (situac_cod)
-)   COMMENT='Tabela de situa????o de computadores quanto ao seu funcionamen';
-
--- --------------------------------------------------------
 
 --
 -- Estrutura da tabela sla_solucao
@@ -752,17 +728,6 @@ CREATE TABLE usuarios_areas (
   KEY uarea_uid (uarea_uid,uarea_sid)
 )   COMMENT='Tabela de areas que o usuario pertence';
 
-
-
-
-
-
-
-
--- Insere o usuario ADMIN
-
-INSERT INTO usuarios ( user_id , login , nome , password , data_inc , data_admis , email , fone , nivel , AREA )
-VALUES ('', 'admin', 'Administrador do Sistema', '21232f297a57a5a743894a0e4a801fc3', now(), now() , 'admin@yourdomain.com' , '123456' , 1 , '1');
 
 --
 -- Extraindo dados da tabela assistencia
