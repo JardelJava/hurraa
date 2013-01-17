@@ -1,11 +1,6 @@
 <div class="navbar navbar-fixed-top navbar-inverse">
    <div class="navbar-inner">
      <div class="container-fluid">
-       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-       </a>
        <img class="pull-left" src="img/48x.png" width="40px" height="40px" style="margin-right: 10px;">
        <a class="brand" href="/hurraa">Hurraa !</a>
        <div class="nav-collapse collapse ">

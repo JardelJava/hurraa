@@ -1,0 +1,15 @@
+@font-face { font-family: 'Helvetica Neue'; src: url(../webfonts/HelveticaNeueLTPro-Ex.otf); font-weight: normal; font-style: normal; }
+body { background-color:#f1f1f2; padding-top: 60px; padding-bottom: 40px; }
+/*==========
+	LOGIN
+============*/
+.form-signin { background: #fff url(../img/48x.png) no-repeat 30px 25px; max-width: 300px; padding: 19px 29px 29px; margin: 0 auto 20px; border: 1px solid #e5e5e5; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; -webkit-box-shadow: inset 5px 5px 20px #f1f1f2, inset -5px -5px 20px #f1f1f2; -moz-box-shadow: inset 5px 5px 20px #f1f1f2, inset -5px -5px 20px #f1f1f2; box-shadow: inset 5px 5px 20px #f1f1f2, inset -5px -5px 20px #f1f1f2; }
+.form-signin h2 { font-size: 48px; text-align:center; margin:10px 0 0 20px; }
+.form-signin h2 span { float:left; font-size: 12px; font-style:italic; color:#777; text-align:center; margin:10px 0 0 -16px; line-height:10px; clear:left; }
+.form-signin .form-signin-heading, .form-signin .checkbox { margin-bottom: 10px; }
+.form-signin #users { background: url(../img/icons/32x/friends_group.gif) no-repeat right 0; font: 12px Arial, Helvetica, sans-serif; }
+.form-signin #pswd { background: url(../img/icons/32x/key_login.gif) no-repeat right 0; font: 12px Arial, Helvetica, sans-serif; }
+.form-signin input[type="text"], .form-signin input[type="password"] { font-size: 16px; height: auto; margin: 10px 0 0 0; padding: 7px 9px 7px 9px; }
+.form-signin button[type="submit"] { font-size: large }
+.form-signin span.logo a img { float: right; margin: -25px 0 0 0; width: 194px; height: 90px; clear: right; }
+footer { position: fixed; bottom: 0; right: 0; margin: 5px; }
