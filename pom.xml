@@ -7,6 +7,17 @@
 	<packaging>war</packaging>
 	<name>hurraa</name>
 
+	<repositories>
+		<repository>
+			<id>EclipseLink</id>
+			<url>http://download.eclipse.org/rt/eclipselink/maven.repo</url>
+		</repository>
+	</repositories>
+
+	<properties>
+		<eclipselink.version>2.4.1</eclipselink.version>
+	</properties>
+
 	<build>
 		<!-- Forçar o nome final do contexto web. -->
 		<finalName>hurraa</finalName>
@@ -55,46 +66,15 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.5.8</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-annotations</artifactId>
-			<version>3.5.0-Final</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>3.5.0-Final</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<version>3.5.0-Final</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate.javax.persistence</groupId>
-			<artifactId>hibernate-jpa-2.0-api</artifactId>
-			<version>1.0.1.Final</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-c3p0</artifactId>
-			<version>3.3.2.GA</version>
-		</dependency>
-		<dependency>
-			<groupId>javassist</groupId>
-			<artifactId>javassist</artifactId>
-			<version>3.8.0.GA</version>
-		</dependency>
-		<dependency>
-			<groupId>cglib</groupId>
-			<artifactId>cglib-nodep</artifactId>
-			<version>[2.1_3,)</version>
-			<type>jar</type>
-			<optional>true</optional>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>eclipselink</artifactId>
+			<version>${eclipselink.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>commonj.sdo</artifactId>
+					<groupId>commonj.sdo</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>
@@ -115,7 +95,7 @@
 			<groupId>me.soliveirajr</groupId>
 			<artifactId>mentawai</artifactId>
 			<version>2.5.4</version>
-			<!-- O Mentawai é um framework web full-stack mas iremos remover várias
+			<!-- O Mentawai é um framework web full-stack mas iremos remover várias 
 				dependências -->
 			<!-- que não serão utilizadas no projeto. -->
 			<exclusions>
