@@ -122,20 +122,42 @@ INSERT INTO fabricante VALUES (116, 'EliteGroup Computer Systens', 1);
 INSERT INTO fabricante VALUES (117, 'Dr. Hank', 1);
 INSERT INTO fabricante VALUES (119, 'MicroPower', 2);
 
-=================== TABELAS MIGRADAS PARA POSTGRES A IMPLEMENTAR ===============
-
 CREATE TABLE usuario (
   id       serial       PRIMARY KEY,
-  nome     varchar(200) NOT NULL,
-  login    varchar(100) NOT NULL,
-  password varchar(200) NOT NULL,
-  inclusao date,
-  admissao date,
-  email    varchar(100),
+  nome     varchar(100) NOT NULL,
+  email    varchar(100) NOT NULL,
   fone     varchar(10)
-  --nivel    char(2) default NULL,
-  --AREA     char(3) default 'ALL',
 );
+
+CREATE UNIQUE index idx_unique_usr_email ON autenticacao (email);
+
+CREATE TABLE autenticacao (
+  usuario integer      PRIMARY KEY,
+  email   varchar(100) NOT NULL,
+  senha   varchar(50)  NOT NULL
+);
+
+CREATE UNIQUE index idx_unique_aut_email ON autenticacao (email);
+
+ALTER TABLE autenticacao ADD CONSTRAINT fk_usuario_autenticacao (usuario) REFERENCES (usuario) ON DELETE CASCADE;
+
+CREATE TABLE grupo (
+    id   serial      PRIMARY KEY,
+    nome varchar(50) NOT NULL
+);
+
+CREATE UNIQUE index idx_unique_grupo_nome on grupo (nome);
+
+CREATE TABLE usuario_grupo (
+    grupo    integer     NOT NULL,
+    usuario  integer     NOT NULL,
+    PRIMARY KEY (grupo, usuario)
+);
+
+ALTER TABLE usuario_grupo ADD CONSTRAINT fk_grupo_usuario FOREIGN KEY (grupo) REFERENCES grupo (id) ON DELETE CASCADE;
+ALTER TABLE usuario_grupo ADD CONSTRAINT fk_usuario_grupo FOREIGN KEY (user_id) REFERENCES usuario (id) ON DELETE CASCADE;
+
+=================== TABELAS MIGRADAS PARA POSTGRES A IMPLEMENTAR ===============
 
 CREATE TABLE centro_custo (
   id        serial      PRIMARY KEY,
