@@ -170,11 +170,6 @@ CREATE TABLE dominio_rede (
   descricao varchar(30) NOT NULL
 );
 
-CREATE TABLE reitoria (
-  id        serial      PRIMARY KEY,
-  descricao varchar(30) NOT NULL
-);
-
 CREATE TABLE status (
   id     serial       PRIMARY KEY,
   status varchar(100) NOT NULL
@@ -267,7 +262,6 @@ CREATE TABLE equipamento (
   polegada         integer,
   fabricante       integer      NOT NULL,
   situacao         integer,
-  reitoria         integer,
   tipo_garantia    integer,
   tempo_garantia   integer,
   assistencia      integer
@@ -336,7 +330,6 @@ CREATE TABLE predio (
 CREATE TABLE localizacao (
   id           serial       PRIMARY KEY,
   descricao    varchar(200) NOT NULL,
-  reitoria     integer,
   --loc_prior int(4) default NULL,
   dominio_rede integer,
   predio       integer,
@@ -1336,14 +1329,6 @@ INSERT INTO prioridades VALUES (2, 'N??VEL 1', 18);
 INSERT INTO prioridades VALUES (3, 'N??VEL 2', 19);
 INSERT INTO prioridades VALUES (4, 'N??VEL 3', 20);
 INSERT INTO prioridades VALUES (5, 'N??VEL 4', 2);
-
-
---
--- Extraindo dados da tabela reitorias
---
-
-INSERT INTO reitorias VALUES (1, 'DEFAULT');
-
 
 --
 -- Extraindo dados da tabela resolucao
