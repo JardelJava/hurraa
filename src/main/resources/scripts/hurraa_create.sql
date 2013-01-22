@@ -123,41 +123,38 @@ INSERT INTO fabricante VALUES (117, 'Dr. Hank', 1);
 INSERT INTO fabricante VALUES (119, 'MicroPower', 2);
 
 CREATE TABLE usuario (
-  id       serial       PRIMARY KEY,
-  nome     varchar(100) NOT NULL,
-  email    varchar(100) NOT NULL,
-  fone     varchar(10)
+  id			serial       PRIMARY KEY,
+  nome			varchar(100) NOT NULL,
+  email			varchar(100) NOT NULL,
+  fone			varchar(10)
 );
 
-CREATE UNIQUE index idx_unique_usr_email ON autenticacao (email);
-
 CREATE TABLE autenticacao (
-  usuario integer      PRIMARY KEY,
-  email   varchar(100) NOT NULL,
-  senha   varchar(50)  NOT NULL
+  id			serial      PRIMARY KEY,
+  usuario_id	integer NOT NULL,
+  email			varchar(100) NOT NULL,
+  senha			varchar(50)  NOT NULL
 );
 
 CREATE UNIQUE index idx_unique_aut_email ON autenticacao (email);
 
-ALTER TABLE autenticacao ADD CONSTRAINT fk_usuario_autenticacao FOREIGN KEY (usuario) REFERENCES usuario ON DELETE CASCADE;
---ALTER TABLE autenticacao ADD CONSTRAINT fk_usuario_autenticacao (usuario) REFERENCES (usuario) ON DELETE CASCADE;
+ALTER TABLE autenticacao ADD CONSTRAINT fk_usuario_autenticacao FOREIGN KEY (usuario_id) REFERENCES usuario ON DELETE CASCADE;
 
 CREATE TABLE grupo (
-    id   serial      PRIMARY KEY,
-    nome varchar(50) NOT NULL
+    id			serial      PRIMARY KEY,
+    nome		varchar(50) NOT NULL
 );
 
 CREATE UNIQUE index idx_unique_grupo_nome on grupo (nome);
 
 CREATE TABLE usuario_grupo (
-    grupo    integer     NOT NULL,
-    usuario  integer     NOT NULL,
-    PRIMARY KEY (grupo, usuario)
+	id			serial      PRIMARY KEY,
+    grupo_id    integer     NOT NULL,
+    usuario_id  integer     NOT NULL
 );
 
-ALTER TABLE usuario_grupo ADD CONSTRAINT fk_grupo_usuario FOREIGN KEY (grupo) REFERENCES grupo (id) ON DELETE CASCADE;
-ALTER TABLE usuario_grupo ADD CONSTRAINT fk_usuario_grupo FOREIGN KEY (usuario) REFERENCES usuario (id) ON DELETE CASCADE;
---ALTER TABLE usuario_grupo ADD CONSTRAINT fk_usuario_grupo FOREIGN KEY (user_id) REFERENCES usuario (id) ON DELETE CASCADE;
+ALTER TABLE usuario_grupo ADD CONSTRAINT fk_grupo_usuario FOREIGN KEY (grupo_id) REFERENCES grupo ON DELETE CASCADE;
+ALTER TABLE usuario_grupo ADD CONSTRAINT fk_usuario_grupo FOREIGN KEY (usuario_id) REFERENCES usuario ON DELETE CASCADE;
 
 =================== TABELAS MIGRADAS PARA POSTGRES A IMPLEMENTAR ===============
 
