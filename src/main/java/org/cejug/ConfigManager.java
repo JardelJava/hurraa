@@ -1,9 +1,18 @@
 package org.cejug;
 
+import javax.persistence.EntityManager;
+
+import org.cejug.business.UsuarioBusiness;
+import org.cejug.business.impl.UsuarioBusinessImpl;
+import org.cejug.helper.ViewPath;
+import org.cejug.persistence.UsuarioPersistence;
+import org.cejug.persistence.impl.UsuarioPersistenceImpl;
 import org.mentawai.ajax.renderer.JsonRenderer;
 import org.mentawai.core.ApplicationManager;
+import org.mentawai.db.JPAHandler;
 import org.mentawai.filter.AjaxFilter;
-import org.mentawai.filter.JpaFilter;
+import org.mentawai.filter.AuthenticationFilter;
+import org.mentawai.filter.MentaContainerFilter;
 
 /**
  * ApplicationManager class ConfigManager.
@@ -24,10 +33,27 @@ public class ConfigManager extends ApplicationManager {
 	 */
 	@Override
     public void loadFilters() {
+
+		filter(new AuthenticationFilter());
+        on(LOGIN, redir(ViewPath.login));
+
         filter(new AjaxFilter(AJAX));
         on(AJAX, ajax(new JsonRenderer()));
 
-        filter(new JpaFilter("hurraa"));
+        filter(new MentaContainerFilter());
+    }
+
+	@Override
+    public JPAHandler createJPAHandler() {
+    	return new JPAHandler("hurraa", true);
+    }
+
+    @Override
+    public void setupIoC() {
+        ioc(EntityManager.class, new JPAHandler("hurraa", true));
+
+        ioc(UsuarioPersistence.class, UsuarioPersistenceImpl.class);
+        ioc(UsuarioBusiness.class, UsuarioBusinessImpl.class);
     }
 
 }

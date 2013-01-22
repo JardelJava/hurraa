@@ -1,11 +1,15 @@
 package org.cejug.pojo.administracao;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -16,10 +20,11 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "usuario")
-@SuppressWarnings("serial")
 public class Usuario implements Serializable {
 
-    @Id
+	private static final long serialVersionUID = -7778321679159096376L;
+
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
@@ -28,6 +33,12 @@ public class Usuario implements Serializable {
     private String email;
 
     private String fone;
+
+    @OneToMany
+    @JoinTable(name="usuario_grupo",
+    joinColumns = @JoinColumn(name="usuario_id"),
+    inverseJoinColumns = @JoinColumn(name="grupo_id"))
+    private List < Grupo > grupos;
 
     public Usuario() {
 
@@ -65,7 +76,15 @@ public class Usuario implements Serializable {
         this.fone = fone;
     }
 
-    @Override
+    public List<Grupo> getGrupos() {
+		return grupos;
+	}
+
+	public void setGrupos(List<Grupo> grupos) {
+		this.grupos = grupos;
+	}
+
+	@Override
     public String toString() {
         return "id: " + id + " nome: " + nome + " email: " + email;
     }
