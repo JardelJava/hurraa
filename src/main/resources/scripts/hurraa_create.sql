@@ -139,7 +139,8 @@ CREATE TABLE autenticacao (
 
 CREATE UNIQUE index idx_unique_aut_email ON autenticacao (email);
 
-ALTER TABLE autenticacao ADD CONSTRAINT fk_usuario_autenticacao (usuario) REFERENCES (usuario) ON DELETE CASCADE;
+ALTER TABLE autenticacao ADD CONSTRAINT fk_usuario_autenticacao FOREIGN KEY (usuario) REFERENCES usuario ON DELETE CASCADE;
+--ALTER TABLE autenticacao ADD CONSTRAINT fk_usuario_autenticacao (usuario) REFERENCES (usuario) ON DELETE CASCADE;
 
 CREATE TABLE grupo (
     id   serial      PRIMARY KEY,
@@ -155,7 +156,8 @@ CREATE TABLE usuario_grupo (
 );
 
 ALTER TABLE usuario_grupo ADD CONSTRAINT fk_grupo_usuario FOREIGN KEY (grupo) REFERENCES grupo (id) ON DELETE CASCADE;
-ALTER TABLE usuario_grupo ADD CONSTRAINT fk_usuario_grupo FOREIGN KEY (user_id) REFERENCES usuario (id) ON DELETE CASCADE;
+ALTER TABLE usuario_grupo ADD CONSTRAINT fk_usuario_grupo FOREIGN KEY (usuario) REFERENCES usuario (id) ON DELETE CASCADE;
+--ALTER TABLE usuario_grupo ADD CONSTRAINT fk_usuario_grupo FOREIGN KEY (user_id) REFERENCES usuario (id) ON DELETE CASCADE;
 
 =================== TABELAS MIGRADAS PARA POSTGRES A IMPLEMENTAR ===============
 
