@@ -1,3 +1,5 @@
+<%@taglib prefix="mtw" uri="http://www.mentaframework.org/tags-mtw/"%>
+
 <div class="navbar navbar-fixed-top navbar-inverse">
    <div class="navbar-inner">
      <div class="container-fluid">
@@ -53,12 +55,12 @@
          </ul>
 
          <ul class="nav pull-right">
-              <li><a href="logout.jsp">Sair</a></li>
+              <li><a href="Logout.mtw">Sair</a></li>
          </ul>
          <ul class="nav pull-right">
-            <li><a href="#">Bem vindo(a): </a></li>
+            <li><a href="#">Bem vindo(a): ${sessionUser}</a></li>
          </ul>
-       </div><!--/.nav-collapse -->
+       </div>
      </div>
    </div>
 </div>

@@ -1,18 +1,58 @@
 <%@ include file="top.jsp"%>
+<style>
+#wpmem_reg form, #wpmem_login form, .wpcf7-form {
+    background-color: whiteSmoke;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    margin-bottom: 20px;
+    min-height: 20px;
+    padding: 19px;
+}
+</style>
+
 <body>
 
-<div class="container">
-  <form class="form-signin">
-    <h2 class="form-signin-heading">&nbsp;Hurraa !<span>Opensource help desk service management</span></h2>
-    <input type="text" id="users" class="input-block-level" placeholder="Usu&aacute;rio" >
-    <input type="password" id="pswd" class="input-block-level" placeholder="Senha">
-    <label class="checkbox">
-      <input type="checkbox" value="remember-me">
-      Lembrar </label>
-    <span class="logo"><a href="http://www.cejug.org/" target="_blank" title="The CearÃ¡ Java User Group"><img src="img/logo_cejug.png" alt="CEJUG"></a></span>
-    <button id="signin" class="btn btn-large btn-primary" type="submit">Entrar</button>	
-  </form>
-</div>
-<!-- /container -->
+  <div class="container" style="width: 250px">
 
-<%@ include file="bottom.jsp"%>
+    <div id="wpmem_login" class="tab-pane active">
+
+      <a name="login"></a>
+      <form class="form" method="post" action="Login.mtw">
+        <fieldset>
+          <legend>Autenticação</legend>
+
+          <label for="username">Login:</label>
+          <div class="div_text">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-user"></i></span>
+              <input type="text" class="username span2"  value="" id="email" name="email">
+            </div>
+          </div>
+
+          <label for="password">Senha</label>
+          <div class="div_text">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-lock"></i></span>
+              <input type="password" class="password span2" id="senha" name="senha">
+            </div>
+
+          </div>
+
+          <div class="button_div">
+             <input type="submit" class="btn btn-primary" value="Login" name="Submit">
+          </div>
+
+          <div class="clear"></div>
+          <div align="right">
+            <a href="">Esqueceu a senha ?</a>
+          </div>
+          <div class="clear"></div>
+        </fieldset>
+      </form>
+    </div>
+
+
+  </div>
+
+  <%@ include file="bottom.jsp"%>
