@@ -2,7 +2,7 @@
 <%-- @ include file="nav.jsp" --%>
 
 <section id="forms">  
-    <form class="form-signin"action="Login.mtw" method="post">
+    <form class="form-signin" action="Login.mtw" method="post">
     <h2 class="form-signin-heading">&nbsp;Hurraa !<span>Opensource help desk service management</span></h2>
     <input type="text" id="email" class="input-block-level" placeholder="Email" >
     <input type="password" id="senha" class="input-block-level" placeholder="Senha">    
