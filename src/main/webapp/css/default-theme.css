@@ -9,4 +9,4 @@
 .form-signin #senha { background: url(../img/icons/glyphicons-halflings/lock.png) no-repeat 2px 6px; }
 .form-signin input[type="text"], .form-signin input[type="password"] { font: 12px Helvetica, Arial, sans-serif; height: auto; margin: 10px 0 0 0; padding: 1px 0 1px 20px; }
 .form-signin button[type="submit"] { font-size: large; margin: 25px 0; }
-.form-signin span.logo a img { float: right; margin: 7px 0 0 0; width: 194px; height: 90px; clear: right; }
+.form-signin span.logo a img { float: right; margin: 15px 23px 0; width: 194px; height: 90px; clear: right; }
