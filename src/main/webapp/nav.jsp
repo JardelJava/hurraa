@@ -1,68 +1,55 @@
 <%@taglib prefix="mtw" uri="http://www.mentaframework.org/tags-mtw/"%>
 
-<div class="navbar navbar-fixed-top navbar-inverse">
-   <div class="navbar-inner">
-     <div class="container-fluid">
-       <img class="pull-left" src="img/48x.png" width="40px" height="40px" style="margin-right: 10px;">
-       <a class="brand" href="/hurraa">Hurraa !</a>
-       <div class="nav-collapse collapse ">
+<section id="navbar">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="container" style="width: auto;">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <img class="pull-left" src="img/48x.png" width="40px" height="40px" style="margin-right: 10px; margin-top: 5px">
+        <a class="brand" href="#">Hurraa !</a>
 
-         <ul class="nav">
-           <li class="dropdown">
-             <a data-toggle="dropdown" class="dropdown-toggle" href="#">Ocorrências<b class="caret"></b></a>
-             <ul class="dropdown-menu">
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="active"><a href="#">Início</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li class="dropdown">
 
-             </ul>
-           </li>
-           <li class="dropdown">
-             <a data-toggle="dropdown" class="dropdown-toggle" href="#">Inventário<b class="caret"></b></a>
-             <ul class="dropdown-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
 
-             </ul>
-           </li>
-           <li class="dropdown">
-             <a data-toggle="dropdown" class="dropdown-toggle" href="#">Administração<b class="caret"></b></a>
-             <ul class="dropdown-menu">
+              </ul>
+            </li>
+          </ul>
+          <form class="navbar-search pull-left" action="">
+            <input type="text" class="search-query span2" placeholder="Search">
+          </form>
+          <ul class="nav pull-right">
 
-               <li class="dropdown-submenu">
-                   <a href="#" tabindex="-1">Configurações</a>
-                   <ul class="dropdown-menu">
-                     <li><a href="#" tabindex="-1">Gerais</a></li>
-                     <li><a href="#" tabindex="-1">Chamados</a></li>
-                   </ul>
-               </li>
-               <li class="dropdown-submenu">
-                   <a href="#" tabindex="-1">Ocorrências</a>
-                   <ul class="dropdown-menu">
-                     <li><a href="#" tabindex="-1">Gerais</a></li>
-                     <li><a href="#" tabindex="-1">Chamados</a></li>
-                   </ul>
-               </li>
-               <li class="dropdown-submenu">
-                   <a href="#" tabindex="-1">Inventário</a>
-                   <ul class="dropdown-menu">
-                     <li><a href="#" tabindex="-1">Equipamentos</a></li>
-                     <li><a href="#" tabindex="-1">Componentes</a></li>
-                     <li><a href="FabricantesAction.mtw" tabindex="-1">Fabricantes</a></li>
-                     <li><a href="#" tabindex="-1">Fornecedores</a></li>
-                     <li><a href="#" tabindex="-1">Situações</a></li>
-                     <li><a href="#" tabindex="-1">Garantias</a></li>
-                     <li><a href="#" tabindex="-1">Softwares</a></li>
-                   </ul>
-               </li>
-             </ul>
-           </li>
-         </ul>
+            <li class="divider-vertical"></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">${sessionUser}<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Perfil</a></li>
+                <li class="divider"></li>
+                <li><a href="Logout.mtw">Sair</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div>
+    </div><!-- /navbar-inner -->
+  </div><!-- /navbar -->
 
-         <ul class="nav pull-right">
-              <li><a href="Logout.mtw">Sair</a></li>
-         </ul>
-         <ul class="nav pull-right">
-            <li><a href="#">Bem vindo(a): ${sessionUser}</a></li>
-         </ul>
-       </div>
-     </div>
-   </div>
-</div>
+</section>
 
- <div class="container">

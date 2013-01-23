@@ -30,7 +30,6 @@ public class LoginAction extends BaseLoginAction {
     	} catch (NoResultException e) { /*:] log this.*/ }
 
 		if (autenticacao != null) {
-			autenticacao.getUsuario();
 			setSessionObj(autenticacao.getEmail());
 		}
 		return SUCCESS;
