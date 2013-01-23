@@ -1,6 +1,4 @@
 <%@ include file="top.jsp" %>
-<%-- @ include file="nav.jsp" --%>
-
 <section id="forms">
     <form class="form-signin" action="Login.mtw" method="post">
         <h2 class="form-signin-heading">&nbsp;Hurraa&nbsp;!<span>Opensource help desk service management</span></h2>
