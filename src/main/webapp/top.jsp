@@ -13,5 +13,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="css/bootswatch.css" rel="stylesheet">
-  </head>
+    <link href="css/default-theme.css" rel="stylesheet">
+    
+    </head>
   <body class="preview" data-spy="scroll" data-target=".subnav" data-offset="80">

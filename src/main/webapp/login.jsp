@@ -1,19 +1,14 @@
 <%@ include file="top.jsp" %>
-<%@ include file="nav.jsp" %>
+<%-- @ include file="nav.jsp" --%>
 
-<section id="forms">
-  <div class="row">
-    <div class="span6 offset0">
-        <form class="well form-search" action="Login.mtw" method="post">
-          <fieldset>
-          <legend>Autenticação:</legend>
-          <input type="text" name="email" id="email" class="input-small" placeholder="Email">
-          <input type="password" name="senha" id="senha" class="input-small" placeholder="Senha">
-          <button type="submit" class="btn">Entrar</button>
-          </fieldset>
-        </form>
-    </div>
-  </div>
+<section id="forms">  
+    <form class="form-signin"action="Login.mtw" method="post">
+    <h2 class="form-signin-heading">&nbsp;Hurraa !<span>Opensource help desk service management</span></h2>
+    <input type="text" id="email" class="input-block-level" placeholder="Email" >
+    <input type="password" id="senha" class="input-block-level" placeholder="Senha">    
+    <span class="logo"><a href="http://www.cejug.org/" target="_blank" title="The Cear&aacute; Java User Group"><img src="img/logo_cejug.png" alt="CEJUG"></a></span>
+    <button id="signin" class="btn btn-primary" type="submit">Entrar</button>	
+  </form>
 </section>
 <script>
 document.getElementById("email").focus();
