@@ -7,7 +7,7 @@
         <button id="signin" class="btn btn-primary" type="submit">Entrar</button>
         <span class="logo">
             <a href="http://www.cejug.org/" target="_blank" title="The Cear&aacute; Java User Group">
-                <img src="img/logo_cejug.svg" width="150" height="75" alt="CEJUG"></a>
+                <img src="img/logo_cejug.png" width="150" height="75" alt="CEJUG"></a>
         </span>
     </form>
 </section>
