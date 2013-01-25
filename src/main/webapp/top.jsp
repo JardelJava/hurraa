@@ -10,10 +10,10 @@
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="css/bootswatch.css" rel="stylesheet">
-    <link href="css/default-theme.css" rel="stylesheet">
-    
+    <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/bootswatch.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/default-theme.css" rel="stylesheet">
+
     </head>
   <body class="preview" data-spy="scroll" data-target=".subnav" data-offset="80">
