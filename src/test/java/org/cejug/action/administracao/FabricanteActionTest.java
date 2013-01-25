@@ -27,16 +27,11 @@ public class FabricanteActionTest {
 	
 	private InventarioBusiness inventarioBusiness;
 
-	private InventarioPersistence inventarioPersistence;
-	
-	private EntityManager entityManager;
 	
 	@Before
 	public void setUp() throws Exception {
 		Container container = new MentaContainer();
 		container.ioc(EntityManager.class, new JPAHandler("hurraa", true));
-		entityManager = container.get(EntityManager.class);
-		
 		container.ioc(InventarioPersistence.class, InventarioPersistenceImpl.class).addConstructorDependency(EntityManager.class);
 		container.ioc(InventarioBusiness.class, InventarioBusinessImpl.class).addConstructorDependency(InventarioPersistence.class);
 		
