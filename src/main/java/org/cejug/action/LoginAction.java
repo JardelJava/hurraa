@@ -5,6 +5,7 @@ import javax.persistence.NoResultException;
 import org.cejug.business.UsuarioBusiness;
 import org.cejug.pojo.administracao.Autenticacao;
 import org.mentawai.action.BaseLoginAction;
+import static org.mentalog.Log.*;
 
 /**
  * Action de login para validar a autenticação.
@@ -27,7 +28,9 @@ public class LoginAction extends BaseLoginAction {
 		try {
 			autenticacao = usuarioBusiness.autenticar(input.getString("email"),
 					input.getString("senha"));
-    	} catch (NoResultException e) { /*:] log this.*/ }
+    	} catch (NoResultException e) { 
+    		Warn.log(e.getMessage()); 
+    	}
 
 		if (autenticacao != null) {
 			setSessionObj(autenticacao.getEmail());
