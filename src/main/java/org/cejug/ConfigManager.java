@@ -2,10 +2,14 @@ package org.cejug;
 
 import javax.persistence.EntityManager;
 
+import org.cejug.business.InventarioBusiness;
 import org.cejug.business.UsuarioBusiness;
+import org.cejug.business.impl.InventarioBusinessImpl;
 import org.cejug.business.impl.UsuarioBusinessImpl;
 import org.cejug.helper.ViewPath;
+import org.cejug.persistence.InventarioPersistence;
 import org.cejug.persistence.UsuarioPersistence;
+import org.cejug.persistence.impl.InventarioPersistenceImpl;
 import org.cejug.persistence.impl.UsuarioPersistenceImpl;
 import org.mentawai.ajax.renderer.JsonRenderer;
 import org.mentawai.core.ApplicationManager;
@@ -53,7 +57,10 @@ public class ConfigManager extends ApplicationManager {
         ioc(EntityManager.class, new JPAHandler("hurraa", true));
 
         ioc(UsuarioPersistence.class, UsuarioPersistenceImpl.class);
+        ioc(InventarioPersistence.class, InventarioPersistenceImpl.class);
+
         ioc(UsuarioBusiness.class, UsuarioBusinessImpl.class);
+        ioc(InventarioBusiness.class, InventarioBusinessImpl.class);
     }
 
 }

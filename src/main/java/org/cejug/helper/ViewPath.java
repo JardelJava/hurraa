@@ -21,6 +21,6 @@ public class ViewPath {
 
 	public static final String login = "/login.jsp";
 
-	public static final String fabricantes = "/administracao/fabricantes.jsp";
+	public static final String fabricantes = "/administracao/inventario/fabricantes.jsp";
 
 }

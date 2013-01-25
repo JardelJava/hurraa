@@ -55,6 +55,18 @@ public class Fabricante implements Serializable {
         this.tipo = tipo;
     }
 
+    public String getTipoLiteral() {
+        String tipoLiteral = "";
+        if (tipo == 1) {
+            tipoLiteral = "Hardware";
+        } else if (tipo == 2){
+            tipoLiteral = "Software";
+        } else {
+            tipoLiteral = "Hardware / Software";
+        }
+        return tipoLiteral;
+    }
+
     @Override
     public String toString() {
         return "id: " + id + " nome: " + nome + " tipo: " + tipo;
