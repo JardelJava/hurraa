@@ -3,7 +3,7 @@ package org.cejug;
 import org.cejug.action.HurraaAction;
 import org.cejug.action.LoginAction;
 import org.cejug.action.administracao.FabricantesAction;
-import org.cejug.helper.ViewPath;
+import static org.cejug.helper.ViewPath.*;
 import org.mentawai.action.LogoutAction;
 import org.mentawai.ajax.renderer.ResultRenderer;
 import org.mentawai.core.ApplicationManager;
@@ -21,16 +21,16 @@ public class AdministracaoManager extends ApplicationManager {
 	public void loadActions() {
 
 		action("/Login", LoginAction.class)
-        .on(SUCCESS, redir(ViewPath.main))
-        .on(ERROR, fwd(ViewPath.login));
+        .on(SUCCESS, redir(main))
+        .on(ERROR, fwd(login));
 
 		action("/Logout", LogoutAction.class)
-        .on(SUCCESS, redir(ViewPath.index));
+        .on(SUCCESS, redir(index));
 
 		ResultRenderer result = new ResultRenderer();
 
-		action("/Hurra", HurraaAction.class).fwdOk(ViewPath.main);
-		action("/Fabricantes", FabricantesAction.class).fwdOk(ViewPath.fabricantes);
+		action("/Hurra", HurraaAction.class).fwdOk(main);
+		action("/Fabricantes", FabricantesAction.class).fwdOk(fabricantes);
 		action("/Fabricantes.getFabricantes", FabricantesAction.class).all(ajax(result));
 
 	}
