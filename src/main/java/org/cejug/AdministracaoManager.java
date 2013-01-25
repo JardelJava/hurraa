@@ -1,6 +1,6 @@
 package org.cejug;
 
-import org.cejug.action.HurraAction;
+import org.cejug.action.HurraaAction;
 import org.cejug.action.LoginAction;
 import org.cejug.action.administracao.FabricantesAction;
 import org.cejug.helper.ViewPath;
@@ -29,7 +29,7 @@ public class AdministracaoManager extends ApplicationManager {
 
 		ResultRenderer result = new ResultRenderer();
 
-		action("/Hurra", HurraAction.class).fwdOk(ViewPath.main);
+		action("/Hurra", HurraaAction.class).fwdOk(ViewPath.main);
 		action("/Fabricantes", FabricantesAction.class).fwdOk(ViewPath.fabricantes);
 		action("/Fabricantes.getFabricantes", FabricantesAction.class).all(ajax(result));
 
