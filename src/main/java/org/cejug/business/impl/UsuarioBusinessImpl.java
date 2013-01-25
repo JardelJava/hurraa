@@ -13,7 +13,7 @@ import org.cejug.pojo.administracao.Autenticacao;
 public class UsuarioBusinessImpl implements UsuarioBusiness {
 
 	/**
-	 * EntityManager injetado pelo mentaContainer.
+	 * Classe de persistencia injetada pelo mentaContainer.
 	 */
 	private UsuarioPersistence usuarioPersistence;
 
