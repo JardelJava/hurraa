@@ -1,4 +1,6 @@
 import org.cejug.ManagersTest;
+import org.cejug.action.HurraaAction;
+import org.cejug.action.administracao.FabricanteActionTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -12,6 +14,8 @@ import org.junit.runners.Suite.SuiteClasses;
 @RunWith(value = Suite.class)
 @SuiteClasses(value = {
 	ManagersTest.class,
+	FabricanteActionTest.class,
+	HurraaAction.class,
 })
 public class AllTests {
 
