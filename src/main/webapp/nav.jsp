@@ -28,16 +28,13 @@
                    </ul>
                 </li>
 
-
               </ul>
             </li>
-
-
 
           </ul>
 
           <form class="navbar-search pull-left" action="">
-            <input type="text" class="search-query span2" placeholder="Search">
+            <input type="text" class="search-query span2" placeholder="Busca">
           </form>
 
           <ul class="nav pull-right">
