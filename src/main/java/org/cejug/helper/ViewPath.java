@@ -6,7 +6,7 @@ package org.cejug.helper;
  * @author helio frota
  *
  */
-public class ViewPath {
+public final class ViewPath {
 
 	/**
 	 * Construtor privado.
