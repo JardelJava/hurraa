@@ -39,7 +39,7 @@ public class ConfigManager extends ApplicationManager {
     public void loadFilters() {
 
 		filter(new AuthenticationFilter());
-        on(LOGIN, redir(ViewPath.login));
+        on(LOGIN, redir(ViewPath.LOGIN));
 
         filter(new AjaxFilter(AJAX));
         on(AJAX, ajax(new JsonRenderer()));

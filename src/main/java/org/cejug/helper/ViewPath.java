@@ -15,12 +15,12 @@ public final class ViewPath {
 
 	}
 
-	public static final String index = "/index.jsp";
+	public static final String INDEX = "/index.jsp";
 
-	public static final String main = "/main.jsp";
+	public static final String MAIN = "/main.jsp";
 
-	public static final String login = "/login.jsp";
+	public static final String LOGIN = "/login.jsp";
 
-	public static final String fabricantes = "/administracao/inventario/fabricantes.jsp";
+	public static final String FABRICANTES = "/administracao/inventario/fabricantes.jsp";
 
 }
