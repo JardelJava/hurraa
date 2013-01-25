@@ -14,28 +14,33 @@
 
         <div class="nav-collapse">
           <ul class="nav">
-            <li class="active"><a href="#">Início</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li class="dropdown">
 
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <li class="active"><a href="${pageContext.request.contextPath}">Início</a></li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administração <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
+
+                <li class="dropdown-submenu">
+                   <a href="#" tabindex="-1">Inventário</a>
+                   <ul class="dropdown-menu">
+                     <li><a href="Fabricantes.mtw" tabindex="-1">Fabricantes</a></li>
+                   </ul>
+                </li>
+
 
               </ul>
             </li>
+
+
+
           </ul>
+
           <form class="navbar-search pull-left" action="">
             <input type="text" class="search-query span2" placeholder="Search">
           </form>
-          <ul class="nav pull-right">
 
+          <ul class="nav pull-right">
             <li class="divider-vertical"></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">${sessionUser}<b class="caret"></b></a>
@@ -46,10 +51,12 @@
               </ul>
             </li>
           </ul>
-        </div><!-- /.nav-collapse -->
+
+        </div>
+
       </div>
-    </div><!-- /navbar-inner -->
-  </div><!-- /navbar -->
+    </div>
+  </div>
 
 </section>
 
