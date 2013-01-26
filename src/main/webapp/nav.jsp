@@ -10,7 +10,7 @@
           <span class="icon-bar"></span>
         </a>
         <img class="pull-left" src="img/48x.png" width="40px" height="40px" style="margin-right: 10px; margin-top: 5px">
-        <a class="brand" href="#">Hurraa !</a>
+        <a class="brand" href="${pageContext.request.contextPath}">Hurraa !</a>
 
         <div class="nav-collapse">
           <ul class="nav">
@@ -21,6 +21,8 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administração <b class="caret"></b></a>
               <ul class="dropdown-menu">
 
+                <li><a href="#">Usuários</a></li>
+
                 <li class="dropdown-submenu">
                    <a href="#" tabindex="-1">Inventário</a>
                    <ul class="dropdown-menu">
@@ -30,12 +32,7 @@
 
               </ul>
             </li>
-
           </ul>
-
-          <form class="navbar-search pull-left" action="">
-            <input type="text" class="search-query span2" placeholder="Busca">
-          </form>
 
           <ul class="nav pull-right">
             <li class="divider-vertical"></li>
