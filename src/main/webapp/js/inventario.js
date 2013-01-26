@@ -1,11 +1,15 @@
 
 var fabricante = (function () {
-  
-  var bt = $('#verMaisFabricantes').click(function() {
+
+  $('#verMaisFabricantes').click(function() {
 	  fabricante.getLastItemId();
-  });	
-   
-  return { 
+  });
+
+  $('#novoFabricante').click(function() {
+    $('#fabricanteForm')[0].reset();
+  });
+
+  return {
 
     getFabricantes: function(inicio, limite) {
     	$('#fabricantesTable').hide();
@@ -23,12 +27,11 @@ var fabricante = (function () {
         });
     	$('#fabricantesTable').show();
     },
-    
+
     getLastItemId: function () {
-    	var tr = $('#fabricantesTable tr:last');
         var id = $('tr:last').children('td:first').html();
         this.getFabricantes(id, 10);
     }
-    
+
   };
 }());
