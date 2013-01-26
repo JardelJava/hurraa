@@ -43,12 +43,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.jolbox</groupId>
-			<artifactId>bonecp</artifactId>
-			<version>0.7.1.RELEASE</version>
-		</dependency>
-
-		<dependency>
 			<groupId>net.sf.json-lib</groupId>
 			<artifactId>json-lib</artifactId>
 			<version>2.4</version>
@@ -95,7 +89,7 @@
 			<groupId>me.soliveirajr</groupId>
 			<artifactId>mentawai</artifactId>
 			<version>2.5.4</version>
-			<!-- O Mentawai é um framework web full-stack mas iremos remover várias 
+			<!-- O Mentawai é um framework web full-stack mas iremos remover várias
 				dependências -->
 			<!-- que não serão utilizadas no projeto. -->
 			<exclusions>
