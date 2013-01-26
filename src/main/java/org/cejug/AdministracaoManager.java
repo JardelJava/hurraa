@@ -29,7 +29,10 @@ public class AdministracaoManager extends ApplicationManager {
 
 		ResultRenderer result = new ResultRenderer();
 
-		action("/Hurra", HurraaAction.class).fwdOk(ViewPath.MAIN);
+		action("/Hurraa", HurraaAction.class).fwdOk(ViewPath.MAIN);
+		action("/Hurraa.administracao", HurraaAction.class).fwdOk(ViewPath.ADMINISTRACAO);
+		action("/Hurraa.inventario", HurraaAction.class).fwdOk(ViewPath.INVENTARIO);
+
 		action("/Fabricantes", FabricantesAction.class).fwdOk(ViewPath.FABRICANTES);
 		action("/Fabricantes.getFabricantes", FabricantesAction.class).all(ajax(result));
 

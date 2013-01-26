@@ -10,11 +10,19 @@ import org.mentawai.core.BaseAction;
  */
 public class HurraaAction extends BaseAction {
 
-	/**
-	 * Metodo default execute.
-	 */ 
-	public String execute() {
-		return SUCCESS;
-	}
+    /**
+     * Metodo default execute.
+     */
+    public String execute() {
+        return SUCCESS;
+    }
+
+    public String inventario() {
+        return SUCCESS;
+    }
+
+    public String administracao() {
+        return SUCCESS;
+    }
 
 }

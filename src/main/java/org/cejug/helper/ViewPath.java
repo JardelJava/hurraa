@@ -16,11 +16,10 @@ public final class ViewPath {
 	}
 
 	public static final String INDEX = "/index.jsp";
-
-	public static final String MAIN = "/main.jsp";
-
 	public static final String LOGIN = "/login.jsp";
-
+	public static final String MAIN = "/main.jsp";
+	public static final String ADMINISTRACAO = "/administracao/administracao.jsp";
+	public static final String INVENTARIO = "/administracao/inventario/inventario.jsp";
 	public static final String FABRICANTES = "/administracao/inventario/fabricantes.jsp";
 
 }
