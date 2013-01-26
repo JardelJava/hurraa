@@ -1,1 +1,1 @@
-<%response.sendRedirect("./Hurra.mtw");%>
+<%response.sendRedirect("./Hurraa.mtw");%>
