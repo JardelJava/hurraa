@@ -43,17 +43,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-core</artifactId>
-			<version>1.9.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-client</artifactId>
-			<version>1.9.1</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
 			<artifactId>eclipselink</artifactId>
 			<version>${eclipselink.version}</version>
@@ -84,8 +73,7 @@
 			<artifactId>mentawai</artifactId>
 			<version>2.5.4</version>
 			<!-- O Mentawai é um framework web full-stack mas iremos remover várias
-				dependências -->
-			<!-- que não serão utilizadas no projeto. -->
+				dependências que não serão utilizadas no projeto. -->
 			<exclusions>
 				<exclusion>
 					<groupId>com.h2database</groupId>
@@ -150,6 +138,14 @@
 				<exclusion>
 					<artifactId>log4j</artifactId>
 					<groupId>log4j</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>xpp3_min</artifactId>
+					<groupId>xpp3</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>xstream</artifactId>
+					<groupId>com.thoughtworks.xstream</groupId>
 				</exclusion>
 			</exclusions>
 		</dependency>
