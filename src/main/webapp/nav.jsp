@@ -24,7 +24,7 @@
                 <li><a href="#">Usuários</a></li>
 
                 <li class="dropdown-submenu">
-                   <a href="#" tabindex="-1">Inventário</a>
+                   <a href="Hurraa.inventario.mtw" tabindex="-1">Inventário</a>
                    <ul class="dropdown-menu">
                      <li><a href="Fabricantes.mtw" tabindex="-1">Fabricantes</a></li>
                    </ul>
