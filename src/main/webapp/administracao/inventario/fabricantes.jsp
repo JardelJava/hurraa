@@ -12,7 +12,7 @@
         <li class="active">Fabricantes:</li>
     </ul>
 
-    <a href="#fabricanteModal" role="button" class="btn" data-toggle="modal" style="margin-bottom: 20px;">Novo fabricante</a>
+    <a href="#fabricanteModal" id="novoFabricante" role="button" class="btn" data-toggle="modal" style="margin-bottom: 20px;">Novo fabricante</a>
 
     <div id="fabricanteModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="fabricanteModalLabel" aria-hidden="true">
       <div class="modal-header">
@@ -21,18 +21,47 @@
       </div>
       <div class="modal-body">
 
-        formulario aqui.
+      <div id="alertContent"></div>
+
+      <form class="form-horizontal well" id="fabricanteForm">
+        <fieldset>
+          <div class="control-group">
+            <label class="control-label" for="fabricanteNome">Nome:</label>
+            <div class="controls">
+              <input type="text" name="fabricanteNome" id="fabricanteNome" class="input-xlarge">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label">Tipo:</label>
+            <div class="controls">
+              <label class="radio">
+			    <input type="radio" name="fabricanteTipo" id="fabricanteTipoHardware" value="1" checked>
+			    Hardware
+			  </label>
+			  <label class="radio">
+			    <input type="radio" name="fabricanteTipo" id="fabricanteTipoSoftware" value="2">
+			    Software
+			  </label>
+			  <label class="radio">
+			    <input type="radio" name="fabricanteTipo" id="fabricanteTipoHardwareSoeftware" value="3">
+			    Hardware / Software
+			  </label>
+            </div>
+          </div>
+
+        </fieldset>
+      </form>
 
       </div>
       <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
-        <button class="btn btn-primary">Salvar</button>
+        <button class="btn" data-dismiss="modal" id="cancelarFabricante" aria-hidden="true">Cancelar</button>
+        <button class="btn btn-primary" id="salvarFabricante">Salvar</button>
       </div>
     </div>
 
     <table id="fabricantesTable" class="table table-condensed table-striped table-hover table-bordered">
     <thead>
-       <th>#</th><th>Nome</th><th>Tipo</th>
+       <th>#</th><th>Nome</th><th>Tipo</th><th colspan="2"></th>
     </thead>
     <tbody></tbody>
     </table>
