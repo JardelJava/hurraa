@@ -7,10 +7,12 @@ CREATE DATABASE "hurraa"
   LC_CTYPE = 'en_US.UTF-8';
 
 CREATE TABLE fabricante (
-  id   serial   PRIMARY KEY,
-  nome text     NOT NULL,
+  id integer PRIMARY KEY NOT NULL,
+  nome varchar(50) NOT NULL,
   tipo smallint
 );
+
+CREATE SEQUENCE fabricante_id_seq START WITH 120 INCREMENT BY 1;
 
 INSERT INTO fabricante VALUES (1, 'Samsung', 1);
 INSERT INTO fabricante VALUES (2, 'LG', 1);
