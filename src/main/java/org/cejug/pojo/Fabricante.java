@@ -2,10 +2,12 @@ package org.cejug.pojo;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -20,7 +22,9 @@ import javax.persistence.Table;
 public class Fabricante implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "fabricanteIdSeq", sequenceName = "fabricante_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "fabricanteIdSeq" )
+    @Column(name = "id")
     private Integer id;
 
     private String nome;
