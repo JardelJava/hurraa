@@ -27,7 +27,7 @@ public class InventarioBusinessImpl implements InventarioBusiness {
 	public InventarioBusinessImpl(InventarioPersistence inventarioPersistence) {
 		this.inventarioPersistence = inventarioPersistence;
 	}
-	
+
 	/**
 	 * Busca fabricantes via camada de persistencia com determinado limite e offset.
 	 * @param inicio int
@@ -38,4 +38,7 @@ public class InventarioBusinessImpl implements InventarioBusiness {
 		return inventarioPersistence.getFabricantes(inicio, limite);
 	}
 
+	public void addFabricante(Fabricante fabricante){
+		inventarioPersistence.addFabricante(fabricante);
+	}
 }

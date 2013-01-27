@@ -22,36 +22,43 @@ import org.mentawai.util.MockAction;
 public class FabricanteActionTest {
 
 	private FabricantesAction action;
-	
+
 	private MockAction mockAction;
-	
+
 	private InventarioBusiness inventarioBusiness;
 
-	
+
 	@Before
 	public void setUp() throws Exception {
 		Container container = new MentaContainer();
-		container.ioc(EntityManager.class, new JPAHandler("hurraa", true));
+		container.ioc(EntityManager.class, new JPAHandler("hurraa", false));
 		container.ioc(InventarioPersistence.class, InventarioPersistenceImpl.class).addConstructorDependency(EntityManager.class);
 		container.ioc(InventarioBusiness.class, InventarioBusinessImpl.class).addConstructorDependency(InventarioPersistence.class);
-		
+
 		inventarioBusiness = container.get(InventarioBusiness.class);
-		
+
 		action = new FabricantesAction(inventarioBusiness);
 		mockAction = new MockAction(action);
 		action.setInput(mockAction.getInput());
 		action.setOutput(mockAction.getOutput());
 	}
-	
+
 	@Test
 	public void execute() {
 		action.execute();
 	}
-	
+
 	@Test
 	public void getFabricantes() {
 		action.getInput().setValue("inicio", 0);
 		action.getInput().setValue("limite", 10);
 		action.getFabricantes();
+	}
+
+	@Test
+	public void addFabricante() {
+		action.getInput().setValue("fabricanteNome", "abcde");
+		action.getInput().setValue("fabricanteTipo", 1);
+		action.addFabricante();
 	}
 }

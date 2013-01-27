@@ -16,18 +16,18 @@ public class InventarioPersistenceImpl implements InventarioPersistence {
 
 	/**
 	 * EntityManager injetado pelo mentaContainer.
-	 */ 
+	 */
 	private EntityManager entityManager;
 
 	/**
 	 * Construtor parametrico.
 	 *
 	 * @param entityManager EntityManager
-	 */ 
+	 */
 	public InventarioPersistenceImpl(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
-	
+
 	/**
 	 * Busca fabricantes na base de dados com determinado limite e offset.
 	 * @param inicio int
@@ -42,4 +42,9 @@ public class InventarioPersistenceImpl implements InventarioPersistence {
 				.getResultList();
 	}
 
+	public void addFabricante(Fabricante fabricante) {
+		entityManager.getTransaction().begin();
+		entityManager.persist(fabricante);
+		entityManager.getTransaction().commit();
+	}
 }

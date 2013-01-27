@@ -11,12 +11,12 @@ import org.cejug.persistence.InventarioPersistence;
 import org.cejug.persistence.UsuarioPersistence;
 import org.cejug.persistence.impl.InventarioPersistenceImpl;
 import org.cejug.persistence.impl.UsuarioPersistenceImpl;
-import org.mentawai.ajax.renderer.JsonRenderer;
 import org.mentawai.core.ApplicationManager;
 import org.mentawai.db.JPAHandler;
-import org.mentawai.filter.AjaxFilter;
 import org.mentawai.filter.AuthenticationFilter;
+import org.mentawai.filter.CharacterEncodingFilter;
 import org.mentawai.filter.MentaContainerFilter;
+import org.mentawai.filter.ValidationFilter;
 
 /**
  * ApplicationManager class ConfigManager.
@@ -41,20 +41,14 @@ public class ConfigManager extends ApplicationManager {
 		filter(new AuthenticationFilter());
         on(LOGIN, redir(ViewPath.LOGIN));
 
-        filter(new AjaxFilter(AJAX));
-        on(AJAX, ajax(new JsonRenderer()));
-
         filter(new MentaContainerFilter());
-    }
-
-	@Override
-    public JPAHandler createJPAHandler() {
-    	return new JPAHandler("hurraa", true);
+        filter(new CharacterEncodingFilter());
+        filter(new ValidationFilter());
     }
 
     @Override
     public void setupIoC() {
-        ioc(EntityManager.class, new JPAHandler("hurraa", true));
+        ioc(EntityManager.class, new JPAHandler("hurraa", false));
 
         ioc(UsuarioPersistence.class, UsuarioPersistenceImpl.class);
         ioc(InventarioPersistence.class, InventarioPersistenceImpl.class);
