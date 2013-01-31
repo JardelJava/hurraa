@@ -3,26 +3,27 @@ package org.cejug;
 import org.mentawai.core.MultiApplicationManager;
 
 /**
- * MultiApplicationManager class AppManager.
- *
- * Helps the organization and separation of macro modules.
+ * O mentawai fornece suporte a multiplas classes de configuracao permitindo
+ * maior separacao dos macro modulos da aplicacao.
  *
  * @author helio frota
  *
  */
 public class AppManager extends MultiApplicationManager {
-
+    
     /**
-     * {@inheritDoc}
+     * Metodo padrao do mentawai para registrar as varias classes centrais de
+     * configuracao.
+     *
      */
     @Override
     public void registerManagers() {
 
-        // Global configuration.
+        // Configuracoes globais.
         register(ConfigManager.class);
 
-        // Hurraa macro modules.
+        // Macro modulos da aplicacao.
+        register(HurraaManager.class);
         register(AdministracaoManager.class);
     }
-
 }
