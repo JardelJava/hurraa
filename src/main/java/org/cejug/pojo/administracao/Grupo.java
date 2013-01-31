@@ -8,36 +8,39 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Classe Entity Grupo.
+ *
+ * @author helio frota
+ *
+ */
 @Entity
-@Table(name= "grupo")
+@Table(name = "grupo")
 public class Grupo implements Serializable {
 
-	private static final long serialVersionUID = -8103435399380001559L;
-
-	@Id
+    private static final long serialVersionUID = -8103435399380001559L;
+    
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    private String nome;
 
-	private String nome;
+    public Grupo() {
+    }
 
-	public Grupo() {
+    public int getId() {
+        return id;
+    }
 
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 }

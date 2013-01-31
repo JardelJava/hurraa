@@ -9,57 +9,58 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+/**
+ * Classe Entity Autenticacao.
+ *
+ * @author helio frota
+ *
+ */
 @Entity
-@Table(name= "autenticacao")
+@Table(name = "autenticacao")
 public class Autenticacao implements Serializable {
 
-	private static final long serialVersionUID = 8055021864264953843L;
-
-	@Id
+    private static final long serialVersionUID = 8055021864264953843L;
+    
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @OneToOne
+    private Usuario usuario;
+    private String email;
+    private String senha;
 
-	@OneToOne
-	private Usuario usuario;
+    public Autenticacao() {
+    }
 
-	private String email;
+    public int getId() {
+        return id;
+    }
 
-	private String senha;
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public Autenticacao() {
+    public Usuario getUsuario() {
+        return usuario;
+    }
 
-	}
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public Usuario getUsuario() {
-		return usuario;
-	}
+    public String getSenha() {
+        return senha;
+    }
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 }

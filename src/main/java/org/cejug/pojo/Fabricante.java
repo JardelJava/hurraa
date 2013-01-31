@@ -18,9 +18,10 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "fabricante")
-@SuppressWarnings("serial")
 public class Fabricante implements Serializable {
 
+    private static final long serialVersionUID = -3466398603052152979L;
+    
     @Id
     @SequenceGenerator(name = "fabricanteIdSeq", sequenceName = "fabricante_id_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "fabricanteIdSeq" )

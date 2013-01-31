@@ -22,26 +22,23 @@ import javax.persistence.Table;
 @Table(name = "usuario")
 public class Usuario implements Serializable {
 
-	private static final long serialVersionUID = -7778321679159096376L;
-
-	@Id
+    private static final long serialVersionUID = -7778321679159096376L;
+    
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-
     private String nome;
-
     private String email;
-
     private String fone;
-
     @OneToMany
-    @JoinTable(name="usuario_grupo",
-    joinColumns = @JoinColumn(name="usuario_id"),
-    inverseJoinColumns = @JoinColumn(name="grupo_id"))
-    private List < Grupo > grupos;
+    @JoinTable(name = "usuario_grupo",
+            joinColumns =
+            @JoinColumn(name = "usuario_id"),
+            inverseJoinColumns =
+            @JoinColumn(name = "grupo_id"))
+    private List< Grupo> grupos;
 
     public Usuario() {
-
     }
 
     public int getId() {
@@ -77,16 +74,15 @@ public class Usuario implements Serializable {
     }
 
     public List<Grupo> getGrupos() {
-		return grupos;
-	}
+        return grupos;
+    }
 
-	public void setGrupos(List<Grupo> grupos) {
-		this.grupos = grupos;
-	}
+    public void setGrupos(List<Grupo> grupos) {
+        this.grupos = grupos;
+    }
 
-	@Override
+    @Override
     public String toString() {
         return "id: " + id + " nome: " + nome + " email: " + email;
     }
-
 }
