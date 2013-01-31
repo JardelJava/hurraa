@@ -15,27 +15,27 @@ import static org.mentalog.Log.*;
  */
 public class LoginAction extends BaseLoginAction {
 
-	private UsuarioBusiness usuarioBusiness;
+    private UsuarioBusiness usuarioBusiness;
 
-	public LoginAction(UsuarioBusiness usuarioBusiness) {
-		this.usuarioBusiness = usuarioBusiness;
-	}
+    public LoginAction(UsuarioBusiness usuarioBusiness) {
+        this.usuarioBusiness = usuarioBusiness;
+    }
 
-	public String execute() {
+    @Override
+    public String execute() {
 
-		Autenticacao autenticacao = null;
+        Autenticacao autenticacao = null;
 
-		try {
-			autenticacao = usuarioBusiness.autenticar(input.getString("email"),
-					input.getString("senha"));
-    	} catch (NoResultException e) { 
-    		Warn.log(e.getMessage()); 
-    	}
+        try {
+            autenticacao = usuarioBusiness.autenticar(input.getString("email"),
+                    input.getString("senha"));
+        } catch (NoResultException e) {
+            Warn.log(e.getMessage());
+        }
 
-		if (autenticacao != null) {
-			setSessionObj(autenticacao.getEmail());
-		}
-		return SUCCESS;
-	}
-
+        if (autenticacao != null) {
+            setSessionObj(autenticacao.getEmail());
+        }
+        return SUCCESS;
+    }
 }

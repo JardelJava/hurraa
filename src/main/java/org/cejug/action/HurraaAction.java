@@ -11,18 +11,28 @@ import org.mentawai.core.BaseAction;
 public class HurraaAction extends BaseAction {
 
     /**
-     * Metodo default execute.
+     * InnerAction default.
+     *
+     * @return String
      */
+    @Override
     public String execute() {
         return SUCCESS;
     }
 
+    /**
+     * Forward para view definida em HurraaManager.
+     * @return String
+     */
     public String inventario() {
         return SUCCESS;
     }
 
+    /**
+     * Forward para view definida em HurraaManager.
+     * @return String
+     */
     public String administracao() {
         return SUCCESS;
     }
-
 }
