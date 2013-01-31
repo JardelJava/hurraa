@@ -20,5 +20,5 @@ public interface InventarioPersistence {
 	 */
 	public List < Fabricante > getFabricantes(int inicio, int limite);
 
-	public void addFabricante(Fabricante fabricante);
+	public void saveFabricante(Fabricante fabricante);
 }

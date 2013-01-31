@@ -2,6 +2,7 @@ package org.cejug.action.administracao;
 
 import org.cejug.business.InventarioBusiness;
 import org.cejug.pojo.Fabricante;
+import org.cejug.pojo.FabricanteTipo;
 import org.mentawai.core.BaseAction;
 import org.mentawai.rule.RequiredFieldRule;
 import org.mentawai.rule.StringRule;
@@ -32,6 +33,7 @@ public class FabricantesAction extends BaseAction implements Validatable {
     /**
      * Metodo default execute.
      */
+    @Override
     public String execute() {
         return SUCCESS;
     }
@@ -46,9 +48,11 @@ public class FabricantesAction extends BaseAction implements Validatable {
     public void addFabricante() {
         Fabricante fabricante = new Fabricante();
         fabricante.setNome(input.getString("fabricanteNome"));
-        fabricante.setTipo(input.getInt("fabricanteTipo"));
-
-        inventarioBusiness.addFabricante(fabricante);
+        String fabricanteTipo = input.getString("fabricanteTipo");
+        if(fabricanteTipo != null && !fabricanteTipo.isEmpty()) {
+            fabricante.setTipo(FabricanteTipo.valueOf(fabricanteTipo));
+        }
+        inventarioBusiness.saveFabricante(fabricante);
 
         ajax("Fabricante cadastrado com sucesso.");
     }
@@ -65,6 +69,4 @@ public class FabricantesAction extends BaseAction implements Validatable {
             }
         }
     }
-
-
 }

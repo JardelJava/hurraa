@@ -1,10 +1,9 @@
 package org.cejug.persistence.impl;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
-
 import org.cejug.persistence.InventarioPersistence;
+import org.cejug.persistence.util.SuportePersistencia;
 import org.cejug.pojo.Fabricante;
 
 /**
@@ -34,17 +33,24 @@ public class InventarioPersistenceImpl implements InventarioPersistence {
 	 * @param limite int
 	 * @return List < Fabricante >
 	 */
+        @Override
 	public List < Fabricante > getFabricantes(int inicio, int limite) {
-		String query = "select f from Fabricante f";
+		String query = "select f from Fabricante f order by f.nome asc";
 		return entityManager.createQuery(query, Fabricante.class)
 				.setFirstResult(inicio)
 				.setMaxResults(limite)
 				.getResultList();
 	}
 
-	public void addFabricante(Fabricante fabricante) {
-		entityManager.getTransaction().begin();
-		entityManager.persist(fabricante);
-		entityManager.getTransaction().commit();
-	}
+    @Override
+    public void saveFabricante(Fabricante fabricante) {
+        entityManager.getTransaction().begin();
+        if (SuportePersistencia.INSTANCE.isIdNotValid(fabricante)) {
+            fabricante.setId(SuportePersistencia.INSTANCE.gerarIdValido());
+            entityManager.persist(fabricante);
+        } else {
+            entityManager.merge(fabricante);
+        }
+        entityManager.getTransaction().commit();
+    }
 }

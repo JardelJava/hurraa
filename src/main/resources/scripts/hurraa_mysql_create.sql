@@ -1,4 +1,8 @@
 drop table if exists fabricante;
+drop table if exists autenticacao;
+drop table if exists usuario_grupo;
+drop table if exists grupo;
+drop table if exists usuario;
 
 create table fabricante (
   id   char(32)    not null,
@@ -21,7 +25,7 @@ create table autenticacao (
   id         char(32)     not null,
   usuario_id char(32)     not null,
   email      varchar(100) not null,
-  senha      varchar(50)  not null,
+  senha      varchar(50)  not null
 ) engine innodb;
 
 alter table autenticacao add constraint pk_autenticacao primary key (id);

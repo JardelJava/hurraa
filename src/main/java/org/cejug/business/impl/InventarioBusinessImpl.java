@@ -1,7 +1,6 @@
 package org.cejug.business.impl;
 
 import java.util.List;
-
 import org.cejug.business.InventarioBusiness;
 import org.cejug.persistence.InventarioPersistence;
 import org.cejug.pojo.Fabricante;
@@ -36,11 +35,13 @@ public class InventarioBusinessImpl implements InventarioBusiness {
      * @param limite int
      * @return List < Fabricante >
      */
+    @Override
     public List< Fabricante> getFabricantes(int inicio, int limite) {
         return inventarioPersistence.getFabricantes(inicio, limite);
     }
 
-    public void addFabricante(Fabricante fabricante) {
-        inventarioPersistence.addFabricante(fabricante);
+    @Override
+    public void saveFabricante(Fabricante fabricante) {
+        inventarioPersistence.saveFabricante(fabricante);
     }
 }

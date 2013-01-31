@@ -35,15 +35,15 @@
             <label class="control-label">Tipo:</label>
             <div class="controls">
               <label class="radio">
-			    <input type="radio" name="fabricanteTipo" id="fabricanteTipoHardware" value="1" checked>
+			    <input type="radio" name="fabricanteTipo" id="fabricanteTipoHardware" value="HARDWARE" checked>
 			    Hardware
 			  </label>
 			  <label class="radio">
-			    <input type="radio" name="fabricanteTipo" id="fabricanteTipoSoftware" value="2">
+			    <input type="radio" name="fabricanteTipo" id="fabricanteTipoSoftware" value="SOFTWARE">
 			    Software
 			  </label>
 			  <label class="radio">
-			    <input type="radio" name="fabricanteTipo" id="fabricanteTipoHardwareSoeftware" value="3">
+			    <input type="radio" name="fabricanteTipo" id="fabricanteTipoHardwareSoftware" value="HARDWARE_SOFTWARE">
 			    Hardware / Software
 			  </label>
             </div>

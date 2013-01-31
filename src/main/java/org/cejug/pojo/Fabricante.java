@@ -1,46 +1,44 @@
 package org.cejug.pojo;
 
 import java.io.Serializable;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import org.cejug.persistence.util.Identified;
 
 /**
  * Classe Entity Fabricante.
  *
- * @author helio frota
+ * @author Helio Frota, Hildeberto Mendonca
  *
  */
 @Entity
 @Table(name = "fabricante")
-public class Fabricante implements Serializable {
+public class Fabricante implements Serializable, Identified {
 
     private static final long serialVersionUID = -3466398603052152979L;
     
     @Id
-    @SequenceGenerator(name = "fabricanteIdSeq", sequenceName = "fabricante_id_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "fabricanteIdSeq" )
-    @Column(name = "id")
-    private Integer id;
+    private String id;
 
     private String nome;
 
-    private int tipo;
+    @Enumerated(EnumType.ORDINAL)
+    private FabricanteTipo tipo;
 
     public Fabricante() {
 
     }
 
-    public Integer getId() {
+    @Override
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    @Override
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -52,29 +50,49 @@ public class Fabricante implements Serializable {
         this.nome = nome;
     }
 
-    public int getTipo() {
+    public FabricanteTipo getTipo() {
         return tipo;
     }
 
-    public void setTipo(int tipo) {
+    public void setTipo(FabricanteTipo tipo) {
         this.tipo = tipo;
     }
 
     public String getTipoLiteral() {
-        String tipoLiteral = "";
-        if (tipo == 1) {
-            tipoLiteral = "Hardware";
-        } else if (tipo == 2){
-            tipoLiteral = "Software";
-        } else {
-            tipoLiteral = "Hardware / Software";
+        switch(this.tipo) {
+            case HARDWARE:
+                return "Hardware";
+            case SOFTWARE:
+                return "Software";
+            default:
+                return "Hardware/Software";
         }
-        return tipoLiteral;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 73 * hash + (this.id != null ? this.id.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Fabricante other = (Fabricante) obj;
+        if ((this.id == null) ? (other.id != null) : !this.id.equals(other.id)) {
+            return false;
+        }
+        return true;
     }
 
     @Override
     public String toString() {
         return "id: " + id + " nome: " + nome + " tipo: " + tipo;
     }
-
 }

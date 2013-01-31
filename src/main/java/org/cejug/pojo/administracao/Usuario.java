@@ -2,15 +2,13 @@ package org.cejug.pojo.administracao;
 
 import java.io.Serializable;
 import java.util.List;
-
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import org.cejug.persistence.util.Identified;
 
 /**
  * Classe Entity Usuario.
@@ -20,16 +18,19 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "usuario")
-public class Usuario implements Serializable {
+public class Usuario implements Serializable, Identified {
 
     private static final long serialVersionUID = -7778321679159096376L;
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private String id;
+    
     private String nome;
+    
     private String email;
+    
     private String fone;
+    
     @OneToMany
     @JoinTable(name = "usuario_grupo",
             joinColumns =
@@ -41,11 +42,13 @@ public class Usuario implements Serializable {
     public Usuario() {
     }
 
-    public int getId() {
+    @Override
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    @Override
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -79,6 +82,28 @@ public class Usuario implements Serializable {
 
     public void setGrupos(List<Grupo> grupos) {
         this.grupos = grupos;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 71 * hash + (this.id != null ? this.id.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Usuario other = (Usuario) obj;
+        if ((this.id == null) ? (other.id != null) : !this.id.equals(other.id)) {
+            return false;
+        }
+        return true;
     }
 
     @Override
