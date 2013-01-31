@@ -19,26 +19,23 @@ import org.mentawai.filter.MentaContainerFilter;
 import org.mentawai.filter.ValidationFilter;
 
 /**
- * ApplicationManager class ConfigManager.
- *
- * Responsible for all global programmatic configurations.
+ * Classe responsavel por varias configuracoes programaticas.
  *
  * @author helio frota
  *
  */
 public class ConfigManager extends ApplicationManager {
-
-	/**
-	 * Default Mentawai method loadFilters.
-	 *
-	 * This method loads all global related filters on
-	 * application.
-	 *
-	 */
-	@Override
+    
+    /**
+     * Metodo padrao do Mentawai para configuracao dos filtros.
+     *
+     * Aqui configuramos os filtros globais da aplicacao.
+     *
+     */
+    @Override
     public void loadFilters() {
 
-		filter(new AuthenticationFilter());
+        filter(new AuthenticationFilter());
         on(LOGIN, redir(ViewPath.LOGIN));
 
         filter(new MentaContainerFilter());
@@ -46,15 +43,25 @@ public class ConfigManager extends ApplicationManager {
         filter(new ValidationFilter());
     }
 
+    /**
+     * Metodo padrao do Mentawai para configuracao do container IOC.
+     * 
+     */
     @Override
     public void setupIoC() {
-        ioc(EntityManager.class, new JPAHandler("hurraa", false));
+        
+        /* O parametro false no JPAHandler indica que o desenvolvedor
+         * sera responsavel por obter a transacao do entityManager.
+         */
+         ioc(EntityManager.class, new JPAHandler("hurraa", false));
 
+        /* Configurando interfaces com devidas implementacoes para
+         * serem injetadas via construtor nas classes.
+         */
         ioc(UsuarioPersistence.class, UsuarioPersistenceImpl.class);
         ioc(InventarioPersistence.class, InventarioPersistenceImpl.class);
 
         ioc(UsuarioBusiness.class, UsuarioBusinessImpl.class);
         ioc(InventarioBusiness.class, InventarioBusinessImpl.class);
     }
-
 }
