@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
    Hurraa http://code.google.com/p/hurraa/
 
@@ -16,8 +17,7 @@
    You should have received a copy of the GNU General Public License
    along with Hurraa.  If not, see <http://www.gnu.org/licenses/>.
  
-  -->
-<?xml version="1.0" encoding="UTF-8"?>
+-->
 
 <persistence version="2.0"
              xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
