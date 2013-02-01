@@ -22,7 +22,7 @@ var fabricante = (function () {
     getFabricantes: function(inicio, limite) {
       $('#fabricantesTable').hide();
       $.getJSON('Fabricantes.getFabricantes.mtw?inicio=' + inicio + '&limite=' + limite, function(json) {
-        if (json != '') { $('#fabricantesTable table tbody').empty(); }
+        if (json !== '') { $('#fabricantesTable table tbody').empty(); }
         var result = '';
           $.each(json, function(key, val) {
             result += '<tr>';
