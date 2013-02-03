@@ -40,7 +40,7 @@ function handleResponse(r) {
     content += '</div>';
     document.getElementById('alertContent').innerHTML = content;
   } else {
-    if (response != 'NO_FEEDBACK') {
+    if (response !== 'NO_FEEDBACK') {
       console.log(response);
     }
     hasError = false;
