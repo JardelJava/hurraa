@@ -17,14 +17,15 @@
  *   along with Hurraa.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package org.cejug.action;
+package org.cejug.hurraa.action;
 
 import javax.persistence.EntityManager;
 
-import org.cejug.business.UsuarioBusiness;
-import org.cejug.business.impl.UsuarioBusinessImpl;
-import org.cejug.persistence.UsuarioPersistence;
-import org.cejug.persistence.impl.UsuarioPersistenceImpl;
+import org.cejug.hurraa.action.LoginAction;
+import org.cejug.hurraa.business.UsuarioBusiness;
+import org.cejug.hurraa.business.impl.UsuarioBusinessImpl;
+import org.cejug.hurraa.persistence.UsuarioPersistence;
+import org.cejug.hurraa.persistence.impl.UsuarioPersistenceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.mentacontainer.Container;

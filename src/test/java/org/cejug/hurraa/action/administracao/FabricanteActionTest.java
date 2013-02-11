@@ -17,14 +17,15 @@
  *   along with Hurraa.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package org.cejug.action.administracao;
+package org.cejug.hurraa.action.administracao;
 
 import javax.persistence.EntityManager;
 
-import org.cejug.business.InventarioBusiness;
-import org.cejug.business.impl.InventarioBusinessImpl;
-import org.cejug.persistence.InventarioPersistence;
-import org.cejug.persistence.impl.InventarioPersistenceImpl;
+import org.cejug.hurraa.action.administracao.FabricantesAction;
+import org.cejug.hurraa.business.InventarioBusiness;
+import org.cejug.hurraa.business.impl.InventarioBusinessImpl;
+import org.cejug.hurraa.persistence.InventarioPersistence;
+import org.cejug.hurraa.persistence.impl.InventarioPersistenceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.mentacontainer.Container;
@@ -47,7 +48,7 @@ public class FabricanteActionTest {
     @Before
     public void setUp() throws Exception {
         Container container = new MentaContainer();
-        container.ioc(EntityManager.class, new JPAHandler("hurraa", false));
+        container.ioc(EntityManager.class, new JPAHandler("hurraa_test", false));
         container.ioc(InventarioPersistence.class, InventarioPersistenceImpl.class).addConstructorDependency(EntityManager.class);
         container.ioc(InventarioBusiness.class, InventarioBusinessImpl.class).addConstructorDependency(InventarioPersistence.class);
 

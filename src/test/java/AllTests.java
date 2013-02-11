@@ -17,10 +17,10 @@
  *   along with Hurraa.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-import org.cejug.ManagersTest;
-import org.cejug.action.HurraaActionTest;
-import org.cejug.action.LoginActionTest;
-import org.cejug.action.administracao.FabricanteActionTest;
+import org.cejug.hurraa.ManagersTest;
+import org.cejug.hurraa.action.HurraaActionTest;
+import org.cejug.hurraa.action.LoginActionTest;
+import org.cejug.hurraa.action.administracao.FabricanteActionTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;

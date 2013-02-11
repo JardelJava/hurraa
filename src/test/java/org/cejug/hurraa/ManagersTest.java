@@ -17,37 +17,39 @@
  *   along with Hurraa.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package org.cejug.action;
+package org.cejug.hurraa;
 
-import org.junit.Before;
+import org.cejug.hurraa.AdministracaoManager;
+import org.cejug.hurraa.AppManager;
+import org.cejug.hurraa.ConfigManager;
 import org.junit.Test;
-import org.mentawai.util.MockAction;
-
 
 /**
- * Classe de teste HurraaActionTest.
+ * Test class ManagersTest.
  *
  * @author helio frota
  *
  */
-public class HurraaActionTest {
+public class ManagersTest {
 
-	private HurraaAction action;
-	
-	private MockAction mockAction;
-	
-	@Before
-	public void setUp() throws Exception {
-		action = new HurraaAction();
-		mockAction = new MockAction(action);
-		action.setInput(mockAction.getInput());
-		action.setOutput(mockAction.getOutput());
+	@Test
+	public void appManagerTest() {
+		new AppManager();
 	}
 	
 	@Test
-	public void execute() {
-		action.execute();
-	}
+    public void configManagerTest() {
+        ConfigManager configManager = new ConfigManager();
+        configManager.init();
+        configManager.createJPAHandler();
+        configManager.loadFilters();
+        configManager.setupIoC();
+    }
 	
-}
+	@Test
+	public void administracaoManagerTest() {
+		AdministracaoManager manager = new AdministracaoManager();
+		manager.loadActions();
+	}
 
+}
