@@ -26,6 +26,7 @@ import org.cejug.hurraa.business.InventarioBusiness;
 import org.cejug.hurraa.business.impl.InventarioBusinessImpl;
 import org.cejug.hurraa.persistence.InventarioPersistence;
 import org.cejug.hurraa.persistence.impl.InventarioPersistenceImpl;
+import org.cejug.hurraa.pojo.FabricanteTipo;
 import org.junit.Before;
 import org.junit.Test;
 import org.mentacontainer.Container;
@@ -74,8 +75,16 @@ public class FabricanteActionTest {
 
     @Test
     public void addFabricante() {
-        action.getInput().setValue("fabricanteNome", "abcde");
-        action.getInput().setValue("fabricanteTipo", 1);
-        //action.addFabricante();
+        action.getInput().setValue("fabricanteNome", "Terminator");
+        action.getInput().setValue("fabricanteTipo", FabricanteTipo.HARDWARE);
+        action.addFabricante();
+
+        action.getInput().setValue("fabricanteNome", "Cyberdyne");
+        action.getInput().setValue("fabricanteTipo", FabricanteTipo.SOFTWARE);
+        action.addFabricante();
+
+        action.getInput().setValue("fabricanteNome", "Skynet");
+        action.getInput().setValue("fabricanteTipo", FabricanteTipo.HARDWARE_SOFTWARE);
+        action.addFabricante();
     }
 }
