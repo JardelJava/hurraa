@@ -31,7 +31,7 @@ create table fabricante (
 alter table fabricante add constraint pk_fabricante primary key (id);
 
 create table usuario (
-  id	char(32)     not null,   
+  id	char(32)     not null,
   nome	varchar(100) not null,
   email	varchar(100) not null,
   fone	varchar(10)      null
@@ -48,10 +48,10 @@ create table autenticacao (
 
 alter table autenticacao add constraint pk_autenticacao primary key (id);
 create unique index idx_unique_autenticacao_email ON autenticacao (email);
-alter table autenticacao add constraint fk_usuario_autenticacao foreign key (usuario_id) references usuario on delete cascade;
+alter table autenticacao add constraint fk_usuario_autenticacao foreign key (usuario_id) references usuario (id) on delete cascade;
 
 create table grupo (
-    id   char(32)    not null,   
+    id   char(32)    not null,
     nome varchar(50) not null
 ) engine innodb;
 
@@ -67,5 +67,5 @@ create table usuario_grupo (
 alter table usuario_grupo add constraint pk_usuario_grupo primary key (id);
 create index idx_grupo_usuario on usuario_grupo (grupo_id);
 create index idx_usuario_grupo on usuario_grupo (usuario_id);
-alter table usuario_grupo add constraint fk_grupo_usuario foreign key (grupo_id) references grupo on delete cascade;
-alter table usuario_grupo add constraint fk_usuario_grupo foreign key (usuario_id) references usuario on delete cascade;
+alter table usuario_grupo add constraint fk_grupo_usuario foreign key (grupo_id) references grupo (id) on delete cascade;
+alter table usuario_grupo add constraint fk_usuario_grupo foreign key (usuario_id) references usuario (id) on delete cascade;
