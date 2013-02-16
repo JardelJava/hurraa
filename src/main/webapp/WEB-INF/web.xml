@@ -32,7 +32,7 @@
 		<servlet-class>org.mentawai.core.Controller</servlet-class>
 		<init-param>
 			<param-name>applicationManager</param-name>
-			<param-value>org.cejug.AppManager</param-value>
+			<param-value>org.cejug.hurraa.AppManager</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
