@@ -3,10 +3,10 @@
 ============*/
 .form-signin { background: #fff url(../img/48x.png) no-repeat 19px 20px; max-width: 240px; padding: 19px 19px 0 19px; margin: 20px auto; border: 1px solid #e5e5e5; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; -webkit-box-shadow: inset 5px 5px 20px #f1f1f2, inset -5px -5px 20px #f1f1f2; -moz-box-shadow: inset 5px 5px 20px #f1f1f2, inset -5px -5px 20px #f1f1f2; box-shadow: inset 5px 5px 20px #f1f1f2, inset -5px -5px 20px #f1f1f2; }
 .form-signin h2 { font-size: 42px; text-align:center; margin:10px 0 0 25px; font-weight: bold; }
-.form-signin h2 span { float:left; font-size: 12px; font-style:italic; color:#777; font-weight: normal; margin:10px 0 10px -20px; line-height:10px; clear:left; }
+.form-signin h2 span { float:left; text-align:center; font-size: 12px; font-style:italic; color:#777; font-weight: normal; margin:10px 0 10px -13px; line-height:10px; clear:left; }
 .form-signin .form-signin-heading, .form-signin .checkbox { margin-bottom: 10px; }
-.form-signin #email { background: url(../img/icons/glyphicons-halflings/user.png) no-repeat 2px 6px; }
-.form-signin #senha { background: url(../img/icons/glyphicons-halflings/lock.png) no-repeat 2px 6px; }
-.form-signin input[type="text"], .form-signin input[type="password"] { font: 12px Helvetica, Arial, sans-serif; height: auto; margin: 0 0 10px 0; padding: 1px 0 1px 20px; }
+.form-signin #email { background: url(../img/icons/iconic/black/user_18x24.png) no-repeat 4px 2px; }
+.form-signin #senha { background: url(../img/icons/iconic/black/key_stroke_24x24.png) no-repeat 2px 2px; }
+.form-signin input[type="text"], .form-signin input[type="password"] { font: 12px Helvetica, Arial, sans-serif; height: auto; margin: 0 0 10px 0; padding: 1px 0 1px 28px; }
 .form-signin button[type="submit"] { font-size: large; margin: 20px 0 35px 0; }
 .form-signin span.logo { float: left; margin: -82px 0 0 90px; width: 150px; height: 75px; }
