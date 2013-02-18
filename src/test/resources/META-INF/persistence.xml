@@ -25,7 +25,7 @@
 
     <persistence-unit name="hurraa_test" transaction-type="RESOURCE_LOCAL">
 
-        <class>org.cejug.hurraa.pojo.Fabricante</class>
+        <class>org.cejug.hurraa.entity.inventario.Fabricante</class>
 
         <properties>
             <property name="hibernate.archive.autodetection" value="class" />
