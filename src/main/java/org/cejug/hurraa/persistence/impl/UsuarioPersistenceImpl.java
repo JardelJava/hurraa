@@ -21,8 +21,8 @@ package org.cejug.hurraa.persistence.impl;
 
 import javax.persistence.EntityManager;
 
+import org.cejug.hurraa.entity.administracao.Autenticacao;
 import org.cejug.hurraa.persistence.UsuarioPersistence;
-import org.cejug.hurraa.pojo.administracao.Autenticacao;
 
 /**
  * Classe de persistencia UsuarioPersistenceImpl.

@@ -22,8 +22,8 @@ package org.cejug.hurraa.business.impl;
 import java.util.List;
 
 import org.cejug.hurraa.business.InventarioBusiness;
+import org.cejug.hurraa.entity.inventario.Fabricante;
 import org.cejug.hurraa.persistence.InventarioPersistence;
-import org.cejug.hurraa.pojo.Fabricante;
 
 /**
  * Classe de negocio InventarioBusinessImpl.

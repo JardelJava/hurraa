@@ -19,7 +19,7 @@
  */
 package org.cejug.hurraa.business;
 
-import org.cejug.hurraa.pojo.administracao.Autenticacao;
+import org.cejug.hurraa.entity.administracao.Autenticacao;
 
 /**
  * Interface de negocio UsuarioBusiness.

@@ -22,7 +22,7 @@ package org.cejug.hurraa.action;
 import javax.persistence.NoResultException;
 
 import org.cejug.hurraa.business.UsuarioBusiness;
-import org.cejug.hurraa.pojo.administracao.Autenticacao;
+import org.cejug.hurraa.entity.administracao.Autenticacao;
 import org.mentawai.action.BaseLoginAction;
 import static org.mentalog.Log.*;
 

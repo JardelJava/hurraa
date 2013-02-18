@@ -17,7 +17,7 @@
  *   along with Hurraa.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package org.cejug.hurraa.pojo;
+package org.cejug.hurraa.entity.inventario;
 
 /**
  *

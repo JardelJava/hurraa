@@ -19,7 +19,7 @@
  */
 package org.cejug.hurraa.persistence;
 
-import org.cejug.hurraa.pojo.administracao.Autenticacao;
+import org.cejug.hurraa.entity.administracao.Autenticacao;
 
 /**
  * Interface de persistencia UsuarioPersistence.

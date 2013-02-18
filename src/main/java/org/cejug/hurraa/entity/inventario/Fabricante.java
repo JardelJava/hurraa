@@ -17,33 +17,42 @@
  *   along with Hurraa.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package org.cejug.hurraa.pojo.administracao;
+package org.cejug.hurraa.entity.inventario;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.cejug.hurraa.entity.listeners.FabricanteEntityListener;
 import org.cejug.hurraa.persistence.util.Identified;
 
 /**
- * Classe Entity Grupo.
+ * Classe Entity Fabricante.
  *
- * @author helio frota
+ * @author Helio Frota, Hildeberto Mendonca
  *
  */
 @Entity
-@Table(name = "grupo")
-public class Grupo implements Serializable, Identified {
+@EntityListeners(FabricanteEntityListener.class)
+@Table(name = "fabricante")
+public class Fabricante implements Serializable, Identified {
 
-    private static final long serialVersionUID = -8103435399380001559L;
-    
+    private static final long serialVersionUID = -3466398603052152979L;
+
     @Id
     private String id;
-    
+
     private String nome;
 
-    public Grupo() {
+    @Enumerated(EnumType.ORDINAL)
+    private FabricanteTipo tipo;
+
+    public Fabricante() {
+
     }
 
     @Override
@@ -64,10 +73,29 @@ public class Grupo implements Serializable, Identified {
         this.nome = nome;
     }
 
+    public FabricanteTipo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(FabricanteTipo tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getTipoLiteral() {
+        switch(this.tipo) {
+            case HARDWARE:
+                return "Hardware";
+            case SOFTWARE:
+                return "Software";
+            default:
+                return "Hardware/Software";
+        }
+    }
+
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 97 * hash + (this.id != null ? this.id.hashCode() : 0);
+        int hash = 5;
+        hash = 73 * hash + (this.id != null ? this.id.hashCode() : 0);
         return hash;
     }
 
@@ -79,10 +107,15 @@ public class Grupo implements Serializable, Identified {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Grupo other = (Grupo) obj;
+        final Fabricante other = (Fabricante) obj;
         if ((this.id == null) ? (other.id != null) : !this.id.equals(other.id)) {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "id: " + id + " nome: " + nome + " tipo: " + tipo;
     }
 }

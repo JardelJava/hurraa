@@ -20,8 +20,8 @@
 package org.cejug.hurraa.business.impl;
 
 import org.cejug.hurraa.business.UsuarioBusiness;
+import org.cejug.hurraa.entity.administracao.Autenticacao;
 import org.cejug.hurraa.persistence.UsuarioPersistence;
-import org.cejug.hurraa.pojo.administracao.Autenticacao;
 
 /**
  * Classe de negocio UsuarioBusinessImpl.

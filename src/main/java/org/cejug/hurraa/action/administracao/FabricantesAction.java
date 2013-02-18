@@ -20,8 +20,8 @@
 package org.cejug.hurraa.action.administracao;
 
 import org.cejug.hurraa.business.InventarioBusiness;
-import org.cejug.hurraa.pojo.Fabricante;
-import org.cejug.hurraa.pojo.FabricanteTipo;
+import org.cejug.hurraa.entity.inventario.Fabricante;
+import org.cejug.hurraa.entity.inventario.FabricanteTipo;
 import org.mentawai.core.BaseAction;
 import org.mentawai.rule.RequiredFieldRule;
 import org.mentawai.rule.StringRule;

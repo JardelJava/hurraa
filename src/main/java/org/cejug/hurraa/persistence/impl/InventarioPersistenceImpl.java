@@ -22,9 +22,9 @@ package org.cejug.hurraa.persistence.impl;
 import java.util.List;
 import javax.persistence.EntityManager;
 
+import org.cejug.hurraa.entity.inventario.Fabricante;
 import org.cejug.hurraa.persistence.InventarioPersistence;
 import org.cejug.hurraa.persistence.util.SuportePersistencia;
-import org.cejug.hurraa.pojo.Fabricante;
 
 /**
  * Classe de persistencia InventarioPersistenceImpl.
@@ -66,7 +66,6 @@ public class InventarioPersistenceImpl implements InventarioPersistence {
     public void saveFabricante(Fabricante fabricante) {
         entityManager.getTransaction().begin();
         if (SuportePersistencia.INSTANCE.isIdNotValid(fabricante)) {
-            fabricante.setId(SuportePersistencia.INSTANCE.gerarIdValido());
             entityManager.persist(fabricante);
         } else {
             entityManager.merge(fabricante);

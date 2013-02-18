@@ -21,7 +21,7 @@ package org.cejug.hurraa.persistence;
 
 import java.util.List;
 
-import org.cejug.hurraa.pojo.Fabricante;
+import org.cejug.hurraa.entity.inventario.Fabricante;
 
 /**
  * Interface de persistencia InventarioPersistence.
