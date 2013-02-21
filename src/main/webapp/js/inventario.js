@@ -67,10 +67,10 @@ var fabricante = (function () {
     addFabricante: function () {
       $.ajax({ type: 'POST', url: 'Fabricantes.addFabricante.mtw', data: $('#fabricanteForm').serialize(),
           success: function(r) {
-            handleResponse(r);
+            var hasError = handleResponse(r);
             if (!hasError) {
-                this.getLastItemId();
-                $('#cancelarFabricante').click();
+                fabricante.getLastItemId();
+                $('#fabricanteModal').modal('hide');
             }
           }
        });
