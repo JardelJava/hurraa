@@ -53,7 +53,13 @@ public class UsuarioBusinessImpl implements UsuarioBusiness {
 	 * @return Autenticacao
 	 */
 	public Autenticacao autenticar(String email, String senha) {
-		return usuarioPersistence.autenticar(email, senha);
+		Autenticacao a = usuarioPersistence.autenticar(email, senha);
+		
+		if (a != null && a.getSenha().equals(senha)) {
+			return a;
+		}
+		
+		return null;
 	}
 
 }

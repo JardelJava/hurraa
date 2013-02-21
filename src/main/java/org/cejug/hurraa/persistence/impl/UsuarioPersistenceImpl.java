@@ -55,12 +55,10 @@ public class UsuarioPersistenceImpl implements UsuarioPersistence {
 	 */
 	public Autenticacao autenticar(String email, String senha) {
 
-		String query = "select a from Autenticacao a where a.email = :email "
-		+ "and a.senha = :senha";
+		String query = "select a from Autenticacao a where a.email = :email";
 
 		return entityManager.createQuery(query, Autenticacao.class)
 				.setParameter("email", email)
-				.setParameter("senha", senha)
 				.getSingleResult();
 	}
 
