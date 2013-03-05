@@ -40,6 +40,8 @@ var fabricante = (function () {
   /* API publica */
   return {
 
+	paginationId: 0,
+	  
     getFabricantes: function(inicio, limite) {
       $('#fabricantesTable').hide();
       $.getJSON('Fabricantes.getFabricantes.mtw?inicio=' + inicio + '&limite=' + limite, function(json) {
@@ -47,12 +49,13 @@ var fabricante = (function () {
         var result = '';
           $.each(json, function(key, val) {
             result += '<tr>';
-            result += '<td>' + val.id + '</td>';
+            result += '<td>' + val.id + '<input type="hidden" class="paginationId" value="' + fabricante.paginationId + '" /></td>';
             result += '<td>' + val.nome + '</td>';
             result += '<td>' + val.tipoLiteral + '</td>';
             result += '<td style="width:20px;cursor:pointer;" onclick="fabricante.prepareUpdateFabricante('+ val.id + ')"><i class="icon-pencil"></i></td>';
             result += '<td style="width:20px;cursor:pointer;" onclick="fabricante.confirmDeleteFabricante('+ val.id + ')"><i class="icon-trash"></i></td>';
             result += '</tr>';
+            fabricante.paginationId++;
             });
           $('#fabricantesTable > tbody:last').append(result);
         });
@@ -60,8 +63,7 @@ var fabricante = (function () {
     },
 
     getLastItemId: function () {
-        var id = $('tr:last').children('td:first').html();
-        this.getFabricantes(id, 10);
+        this.getFabricantes(fabricante.paginationId, 10);
     },
 
     addFabricante: function () {

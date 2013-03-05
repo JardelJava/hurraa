@@ -48,7 +48,7 @@ public class Fabricante implements Serializable, Identified {
 
     private String nome;
 
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     private FabricanteTipo tipo;
 
     public Fabricante() {
