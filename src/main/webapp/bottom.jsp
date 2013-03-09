@@ -16,10 +16,8 @@
    You should have received a copy of the GNU General Public License
    along with Hurraa.  If not, see <http://www.gnu.org/licenses/>.
 --%>
-<hr>
-
-    <footer id="footer" style=" margin-left: 20px; margin-right: 20px">
-      <p class="pull-right"><a href="#">Topo</a></p>
+    <footer id="footer">
+      <!--<p class="pull-right"><a href="#">Topo</a></p>-->
       <div class="links">
         <a href="http://www.cejug.org" target="_blank">CEJUG</a>
       </div>

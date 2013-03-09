@@ -16,27 +16,14 @@
    You should have received a copy of the GNU General Public License
    along with Hurraa.  If not, see <http://www.gnu.org/licenses/>.
 --%>
-<%@ include file="top.jsp" %>
+<%@ include file="top.jsp"%>
 <%@ include file="nav.jsp" %>
 <%@ taglib prefix="mtw" uri="http://www.mentaframework.org/tags-mtw/"%>
 <mtw:requiresAuthentication />
+<div id="main" role="main">
+	<div class="container"></div>
+</div>
+</br>
 
-<section>
-  <div class="row">
-
-    <div class="span4 offset1">
-      <h4>Abcde:</h4>
-      testes
-
-    </div>
-
-    <div class="span8">
-      <h4>123456:</h4>
-       teste 2
-    </div>
-
-  </div>
-</section>
-
-<%@ include file="bottom.jsp" %>
+<%@ include file="bottom.jsp"%>
 

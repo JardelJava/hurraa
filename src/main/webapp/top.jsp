@@ -34,4 +34,4 @@
     <link href="${pageContext.request.contextPath}/css/default-theme.css" rel="stylesheet">
 
     </head>
-  <body class="preview" data-spy="scroll" data-target=".subnav" data-offset="80">
+  <body class="preview" data-spy="scroll" data-target=".subnav" data-offset="80">  
