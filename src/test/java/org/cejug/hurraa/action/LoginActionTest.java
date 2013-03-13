@@ -27,6 +27,7 @@ import org.cejug.hurraa.business.impl.UsuarioBusinessImpl;
 import org.cejug.hurraa.persistence.UsuarioPersistence;
 import org.cejug.hurraa.persistence.impl.UsuarioPersistenceImpl;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.mentacontainer.Container;
 import org.mentacontainer.impl.MentaContainer;
@@ -64,6 +65,7 @@ public class LoginActionTest {
 	}
 	
 	@Test
+	@Ignore
 	public void execute() {
 		action.getInput().setValue("email", "123");
 		action.getInput().setValue("senha", "456");

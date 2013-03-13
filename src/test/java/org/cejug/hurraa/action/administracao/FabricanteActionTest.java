@@ -28,6 +28,7 @@ import org.cejug.hurraa.entity.inventario.FabricanteTipo;
 import org.cejug.hurraa.persistence.InventarioPersistence;
 import org.cejug.hurraa.persistence.impl.InventarioPersistenceImpl;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.mentacontainer.Container;
 import org.mentacontainer.impl.MentaContainer;
@@ -62,11 +63,13 @@ public class FabricanteActionTest {
     }
 
     @Test
+    @Ignore
     public void execute() {
         action.execute();
     }
 
     @Test
+    @Ignore
     public void getFabricantes() {
         action.getInput().setValue("inicio", 0);
         action.getInput().setValue("limite", 10);
@@ -74,6 +77,7 @@ public class FabricanteActionTest {
     }
 
     @Test
+    @Ignore
     public void addFabricante() {
         action.getInput().setValue("fabricanteNome", "Terminator");
         action.getInput().setValue("fabricanteTipo", FabricanteTipo.HARDWARE);
