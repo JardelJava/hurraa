@@ -20,7 +20,7 @@
 <section id="forms">
     <form class="form-signin" action="Login.mtw" method="post" autocomplete="off">
         <h2 class="form-signin-heading">&nbsp;Hurraa&nbsp;!<span>Opensource help desk service management<br>Built under license GPLv3</span></h2>            
-        <input id="user" type="text" name="email" class="input-block-level" placeholder="Email" autofocus />
+        <input id="user" type="text" name="email" class="input-block-level" placeholder="Email" />
         <span id="user-icon"></span>        
         <input type="password" id="password" name="senha" class="input-block-level" placeholder="Senha" />
         <span id="pswd-icon"></span> 
