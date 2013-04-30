@@ -19,9 +19,11 @@
 <%@ include file="top.jsp" %>
 <section id="forms">
     <form class="form-signin" action="Login.mtw" method="post" autocomplete="off">
-        <h2 class="form-signin-heading">&nbsp;Hurraa&nbsp;!<span>Opensource help desk service management<br>Built under license GPLv3</span></h2>
-        <input type="text" id="email" name="email" class="input-block-level" placeholder="Email" autofocus>
-        <input type="password" id="senha" name="senha" class="input-block-level" placeholder="Senha">
+        <h2 class="form-signin-heading">&nbsp;Hurraa&nbsp;!<span>Opensource help desk service management<br>Built under license GPLv3</span></h2>            
+        <input id="user" type="text" name="email" class="input-block-level" placeholder="Email" autofocus />
+        <span id="user-icon"></span>        
+        <input type="password" id="password" name="senha" class="input-block-level" placeholder="Senha" />
+        <span id="pswd-icon"></span> 
         <button id="signin" class="btn btn-primary" type="submit">Entrar</button>
         <span class="logo">
             <a href="http://www.cejug.org/" target="_blank" title="The Cear&aacute; Java User Group">
