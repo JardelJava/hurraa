@@ -6,7 +6,6 @@
 .form-signin h2 span { float:left; text-align:center; font-size: 12px; font-style:italic; color:#777; font-weight: normal; margin:10px 0 10px -13px; line-height:13px; clear:left; }
 .form-signin .form-signin-heading, .form-signin .checkbox { margin-bottom: 10px; }
 .form-signin #user-icon { background: url(../img/blueberry24x.png) no-repeat -193px -25px; width:24px; height:24px; margin:-38px 0 12px 2px; display: block; }
-/*.form-signin #user:focus, #password:focus { background: transparent; outline: none; }*/
 .form-signin #pswd-icon { background: url(../img/blueberry24x.png) no-repeat -72px 0; width:24px; height:24px; margin:-38px 0 24px 2px; display: block; }
 .form-signin input[type="text"], .form-signin input[type="password"] { background: transparent; font: 12px Helvetica, Arial, sans-serif; height: auto; margin: 0 0 10px 0; padding: 1px 0 1px 28px; }
 .form-signin input[type="text"]:focus, .form-signin input[type="password"]:focus { background: transparent; outline:0; }
