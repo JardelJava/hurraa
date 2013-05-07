@@ -69,3 +69,11 @@ create index idx_grupo_usuario on usuario_grupo (grupo_id);
 create index idx_usuario_grupo on usuario_grupo (usuario_id);
 alter table usuario_grupo add constraint fk_grupo_usuario foreign key (grupo_id) references grupo (id) on delete cascade;
 alter table usuario_grupo add constraint fk_usuario_grupo foreign key (usuario_id) references usuario (id) on delete cascade;
+
+/*
+insert into hurraa.grupo (id, nome) values ('1', 'administradores');
+insert into hurraa.usuario (id, nome, email, fone) values ('1', 'admin', 'admin@hurraa.org', '9999-9999');
+insert into hurraa.usuario_grupo (id, grupo_id, usuario_id) values ('1', '1', '1');
+insert into hurraa.autenticacao (id, usuario_id, email, senha) values ('1', '1', 'admin@hurraa.org', 'admin');
+
+*/
