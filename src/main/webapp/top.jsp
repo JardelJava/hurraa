@@ -23,7 +23,6 @@
     <title>Hurraa !</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Hurraa">
-    <meta name="author" content="CEJUG">
     <link rel="shortcut icon" href="img/16x.png">
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
