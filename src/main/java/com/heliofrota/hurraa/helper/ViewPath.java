@@ -1,5 +1,5 @@
 /*
- *   Hurraa http://github.com/heliofrota/hurraa
+ *   Hurraa http://github.com/heliofrota/hurraa/
  *
  *   This file is part of Hurraa.
  *
@@ -17,28 +17,28 @@
  *   along with Hurraa.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-import org.junit.runners.Suite.SuiteClasses;
-
-import com.heliofrota.hurraa.ManagersTest;
-import com.heliofrota.hurraa.action.HurraaActionTest;
-import com.heliofrota.hurraa.action.LoginActionTest;
-import com.heliofrota.hurraa.action.administracao.FabricanteActionTest;
+package com.heliofrota.hurraa.helper;
 
 /**
- * Test class AllTests.
+ * Classe utilitária não instanciável para guardar paths das views.
  *
- * @author helio frota http://www.heliofrota.com
+ * @author helio frota
  *
  */
-@RunWith(value = Suite.class)
-@SuiteClasses(value = {
-	ManagersTest.class,
-	FabricanteActionTest.class,
-	HurraaActionTest.class,
-	LoginActionTest.class
-})
-public class AllTests {
+public final class ViewPath {
+
+	/**
+	 * Construtor privado.
+	 */
+	private ViewPath() {
+
+	}
+
+	public static final String INDEX = "/index.jsp";
+	public static final String LOGIN = "/login.jsp";
+	public static final String MAIN = "/main.jsp";
+	public static final String ADMINISTRACAO = "/administracao/administracao.jsp";
+	public static final String INVENTARIO = "/administracao/inventario/inventario.jsp";
+	public static final String FABRICANTES = "/administracao/inventario/fabricantes.jsp";
 
 }

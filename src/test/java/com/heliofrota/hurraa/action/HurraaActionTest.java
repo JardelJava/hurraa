@@ -1,5 +1,5 @@
 /*
- *   Hurraa http://github.com/heliofrota/hurraa
+ *   Hurraa http://github.com/heliofrota/hurraa/
  *
  *   This file is part of Hurraa.
  *
@@ -17,28 +17,39 @@
  *   along with Hurraa.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-import org.junit.runners.Suite.SuiteClasses;
+package com.heliofrota.hurraa.action;
 
-import com.heliofrota.hurraa.ManagersTest;
-import com.heliofrota.hurraa.action.HurraaActionTest;
-import com.heliofrota.hurraa.action.LoginActionTest;
-import com.heliofrota.hurraa.action.administracao.FabricanteActionTest;
+import org.junit.Before;
+import org.junit.Test;
+import org.mentawai.util.MockAction;
+
+import com.heliofrota.hurraa.action.HurraaAction;
+
 
 /**
- * Test class AllTests.
+ * Classe de teste HurraaActionTest.
  *
  * @author helio frota http://www.heliofrota.com
  *
  */
-@RunWith(value = Suite.class)
-@SuiteClasses(value = {
-	ManagersTest.class,
-	FabricanteActionTest.class,
-	HurraaActionTest.class,
-	LoginActionTest.class
-})
-public class AllTests {
+public class HurraaActionTest {
 
+	private HurraaAction action;
+	
+	private MockAction mockAction;
+	
+	@Before
+	public void setUp() throws Exception {
+		action = new HurraaAction();
+		mockAction = new MockAction(action);
+		action.setInput(mockAction.getInput());
+		action.setOutput(mockAction.getOutput());
+	}
+	
+	@Test
+	public void execute() {
+		action.execute();
+	}
+	
 }
+

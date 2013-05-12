@@ -1,5 +1,5 @@
 /*
- *   Hurraa http://github.com/heliofrota/hurraa
+ *   Hurraa http://github.com/heliofrota/hurraa/
  *
  *   This file is part of Hurraa.
  *
@@ -17,28 +17,15 @@
  *   along with Hurraa.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-import org.junit.runners.Suite.SuiteClasses;
-
-import com.heliofrota.hurraa.ManagersTest;
-import com.heliofrota.hurraa.action.HurraaActionTest;
-import com.heliofrota.hurraa.action.LoginActionTest;
-import com.heliofrota.hurraa.action.administracao.FabricanteActionTest;
+package com.heliofrota.hurraa.persistence.util;
 
 /**
- * Test class AllTests.
- *
- * @author helio frota http://www.heliofrota.com
- *
+ * Interface para classes de entidade cujo id não é um atributo normal da entidade
+ * e precisa ser gerado pela aplicação. Classes que possuem um atributo único
+ * usado como id, não devem implementar esta interface.
+ * @author Hildeberto Mendonca
  */
-@RunWith(value = Suite.class)
-@SuiteClasses(value = {
-	ManagersTest.class,
-	FabricanteActionTest.class,
-	HurraaActionTest.class,
-	LoginActionTest.class
-})
-public class AllTests {
-
+public interface Identified {
+    public String getId();
+    public void setId(String id);
 }

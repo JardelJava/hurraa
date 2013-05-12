@@ -1,5 +1,5 @@
 /*
- *   Hurraa http://github.com/heliofrota/hurraa
+ *   Hurraa http://github.com/heliofrota/hurraa/
  *
  *   This file is part of Hurraa.
  *
@@ -17,28 +17,41 @@
  *   along with Hurraa.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-import org.junit.runners.Suite.SuiteClasses;
+package com.heliofrota.hurraa.action;
 
-import com.heliofrota.hurraa.ManagersTest;
-import com.heliofrota.hurraa.action.HurraaActionTest;
-import com.heliofrota.hurraa.action.LoginActionTest;
-import com.heliofrota.hurraa.action.administracao.FabricanteActionTest;
+import org.mentawai.core.BaseAction;
 
 /**
- * Test class AllTests.
+ * Action HurraaAction.
  *
- * @author helio frota http://www.heliofrota.com
+ * @author helio frota
  *
  */
-@RunWith(value = Suite.class)
-@SuiteClasses(value = {
-	ManagersTest.class,
-	FabricanteActionTest.class,
-	HurraaActionTest.class,
-	LoginActionTest.class
-})
-public class AllTests {
+public class HurraaAction extends BaseAction {
 
+    /**
+     * InnerAction default.
+     *
+     * @return String
+     */
+    @Override
+    public String execute() {
+        return SUCCESS;
+    }
+
+    /**
+     * Forward para view definida em HurraaManager.
+     * @return String
+     */
+    public String inventario() {
+        return SUCCESS;
+    }
+
+    /**
+     * Forward para view definida em HurraaManager.
+     * @return String
+     */
+    public String administracao() {
+        return SUCCESS;
+    }
 }

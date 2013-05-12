@@ -1,5 +1,5 @@
 /*
- *   Hurraa http://github.com/heliofrota/hurraa
+ *   Hurraa http://github.com/heliofrota/hurraa/
  *
  *   This file is part of Hurraa.
  *
@@ -17,28 +17,27 @@
  *   along with Hurraa.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-import org.junit.runners.Suite.SuiteClasses;
+package com.heliofrota.hurraa.persistence;
 
-import com.heliofrota.hurraa.ManagersTest;
-import com.heliofrota.hurraa.action.HurraaActionTest;
-import com.heliofrota.hurraa.action.LoginActionTest;
-import com.heliofrota.hurraa.action.administracao.FabricanteActionTest;
+import java.util.List;
+
+import com.heliofrota.hurraa.entity.inventario.Fabricante;
 
 /**
- * Test class AllTests.
+ * Interface de persistencia InventarioPersistence.
  *
- * @author helio frota http://www.heliofrota.com
+ * @author helio frota
  *
  */
-@RunWith(value = Suite.class)
-@SuiteClasses(value = {
-	ManagersTest.class,
-	FabricanteActionTest.class,
-	HurraaActionTest.class,
-	LoginActionTest.class
-})
-public class AllTests {
+public interface InventarioPersistence {
 
+	/**
+	 * Busca fabricantes na base de dados com determinado limite e offset.
+	 * @param inicio int
+	 * @param limite int
+	 * @return List < Fabricante >
+	 */
+	public List < Fabricante > getFabricantes(int inicio, int limite);
+
+	public void saveFabricante(Fabricante fabricante);
 }

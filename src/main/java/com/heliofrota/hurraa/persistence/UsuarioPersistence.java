@@ -1,5 +1,5 @@
 /*
- *   Hurraa http://github.com/heliofrota/hurraa
+ *   Hurraa http://github.com/heliofrota/hurraa/
  *
  *   This file is part of Hurraa.
  *
@@ -17,28 +17,25 @@
  *   along with Hurraa.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-import org.junit.runners.Suite.SuiteClasses;
+package com.heliofrota.hurraa.persistence;
 
-import com.heliofrota.hurraa.ManagersTest;
-import com.heliofrota.hurraa.action.HurraaActionTest;
-import com.heliofrota.hurraa.action.LoginActionTest;
-import com.heliofrota.hurraa.action.administracao.FabricanteActionTest;
+import com.heliofrota.hurraa.entity.administracao.Autenticacao;
 
 /**
- * Test class AllTests.
+ * Interface de persistencia UsuarioPersistence.
  *
- * @author helio frota http://www.heliofrota.com
+ * @author helio frota
  *
  */
-@RunWith(value = Suite.class)
-@SuiteClasses(value = {
-	ManagersTest.class,
-	FabricanteActionTest.class,
-	HurraaActionTest.class,
-	LoginActionTest.class
-})
-public class AllTests {
+public interface UsuarioPersistence {
+
+	/**
+	 * Autenticacao de email e senha na base de dados.
+	 *
+	 * @param email String
+	 * @param senha String
+	 * @return Autenticacao
+	 */
+	public Autenticacao autenticar(String email, String senha);
 
 }
