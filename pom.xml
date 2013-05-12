@@ -108,6 +108,10 @@
                     <artifactId>h2</artifactId>
                 </exclusion>
                 <exclusion>
+                    <groupId>com.h2database</groupId>
+                    <artifactId>h2</artifactId>
+                </exclusion>
+                <exclusion>
                     <groupId>org.jruby</groupId>
                     <artifactId>jruby</artifactId>
                 </exclusion>
@@ -174,6 +178,10 @@
                 <exclusion>
                     <artifactId>xstream</artifactId>
                     <groupId>com.thoughtworks.xstream</groupId>
+                </exclusion>
+                <exclusion>
+                	<artifactId>jgroups-all</artifactId>
+                	<groupId>jgroups</groupId>
                 </exclusion>
             </exclusions>
         </dependency>
