@@ -64,13 +64,11 @@ public class FabricanteActionTest {
     }
 
     @Test
-    @Ignore
     public void execute() {
         action.execute();
     }
 
     @Test
-    @Ignore
     public void getFabricantes() {
         action.getInput().setValue("inicio", 0);
         action.getInput().setValue("limite", 10);
@@ -78,7 +76,6 @@ public class FabricanteActionTest {
     }
 
     @Test
-    @Ignore
     public void addFabricante() {
         action.getInput().setValue("fabricanteNome", "Terminator");
         action.getInput().setValue("fabricanteTipo", FabricanteTipo.HARDWARE);

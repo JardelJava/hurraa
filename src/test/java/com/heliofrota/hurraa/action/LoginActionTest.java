@@ -66,7 +66,6 @@ public class LoginActionTest {
 	}
 	
 	@Test
-	@Ignore
 	public void execute() {
 		action.getInput().setValue("email", "123");
 		action.getInput().setValue("senha", "456");
