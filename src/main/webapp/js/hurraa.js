@@ -1,5 +1,5 @@
 /*
-   Hurraa http://code.google.com/p/hurraa/
+   Hurraa http://github.com/heliofrota/hurraa/
 
    This file is part of Hurraa.
 

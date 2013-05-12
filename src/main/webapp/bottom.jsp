@@ -1,5 +1,5 @@
 <%--
-   Hurraa http://code.google.com/p/hurraa/
+   Hurraa http://github.com/heliofrota/hurraa/
 
    This file is part of Hurraa.
 
@@ -19,7 +19,7 @@
     <footer id="footer">
       <!--<p class="pull-right"><a href="#">Topo</a></p>-->
       <div class="links">
-        <a href="http://www.cejug.org" target="_blank">CEJUG</a>
+        <a href="http://github.com/heliofrota/hurraa/" target="_blank">Source code</a>
       </div>
     </footer>
 

@@ -1,5 +1,5 @@
 /*
- *   Hurraa http://code.google.com/p/hurraa/
+ *   Hurraa http://github.com/heliofrota/hurraa/
  *
  *   This file is part of Hurraa.
  *
@@ -38,7 +38,7 @@ import org.mentawai.util.MockAction;
 /**
  * Classe de teste FabricanteActionTest.
  *
- * @author helio frota
+ * @author helio frota http://www.heliofrota.com
  *
  */
 public class FabricanteActionTest {

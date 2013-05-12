@@ -1,5 +1,5 @@
 <%--
-   Hurraa http://code.google.com/p/hurraa/
+   Hurraa http://github.com/heliofrota/hurraa/
 
    This file is part of Hurraa.
 
@@ -25,10 +25,6 @@
         <input type="password" id="password" name="senha" class="input-block-level" placeholder="Senha" />
         <span id="pswd-icon"></span> 
         <button id="signin" class="btn btn-primary" type="submit">Entrar</button>
-        <span class="logo">
-            <a href="http://www.cejug.org/" target="_blank" title="The Cear&aacute; Java User Group">
-                <img src="img/logo_cejug.png" width="150" height="75" alt="CEJUG"></a>
-        </span>
     </form>
 </section> 
 
