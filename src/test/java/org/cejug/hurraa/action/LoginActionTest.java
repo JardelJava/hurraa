@@ -52,7 +52,7 @@ public class LoginActionTest {
 	@Before
 	public void setUp() throws Exception {
 		Container container = new MentaContainer();
-		container.ioc(EntityManager.class, new JPAHandler("hurraa", true));
+		container.ioc(EntityManager.class, new JPAHandler("hurraa_test", true));
 		container.ioc(UsuarioPersistence.class, UsuarioPersistenceImpl.class).addConstructorDependency(EntityManager.class);
 		container.ioc(UsuarioBusiness.class, UsuarioBusinessImpl.class).addConstructorDependency(UsuarioPersistence.class);
 		

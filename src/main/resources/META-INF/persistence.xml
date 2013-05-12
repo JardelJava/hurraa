@@ -34,5 +34,21 @@
         </properties>
 
     </persistence-unit>
+    
+    
+    <persistence-unit name="hurraa_test" transaction-type="RESOURCE_LOCAL">
+
+        <class>org.cejug.hurraa.entity.inventario.Fabricante</class>
+
+        <properties>
+            <property name="hibernate.archive.autodetection" value="class" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hurraa_test"></property>
+            <property name="javax.persistence.jdbc.user" value="hurraa"></property>
+            <property name="javax.persistence.jdbc.password" value="hurraa"></property>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"></property>
+            <property name="eclipselink.logging.level" value="FINE"/>
+        </properties>
+
+    </persistence-unit>
 
 </persistence>

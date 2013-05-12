@@ -1,5 +1,5 @@
 /*
- *   Hurraa http://code.google.com/p/hurraa/
+ *   Hurraa http://github.com/heliofrota/hurraa
  *
  *   This file is part of Hurraa.
  *
@@ -28,7 +28,7 @@ import org.junit.runners.Suite.SuiteClasses;
 /**
  * Test class AllTests.
  *
- * @author helio frota
+ * @author helio frota http://www.heliofrota.com
  *
  */
 @RunWith(value = Suite.class)
