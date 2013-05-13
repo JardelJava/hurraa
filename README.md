@@ -3,6 +3,7 @@ Hurraa
 
 Hurraa ! Opensource help desk service management.
 
-[Changelog](https://github.com/heliofrota/hurraa/wiki/Changelog)
+[Changelog](https://github.com/heliofrota/hurraa/wiki/Log-de-modifica%C3%A7%C3%B5es)
+
 
 ![Hurraa](https://github.com/heliofrota/hurraa/raw/master/hurraa_preview.png)
