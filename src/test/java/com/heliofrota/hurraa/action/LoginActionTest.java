@@ -22,7 +22,6 @@ package com.heliofrota.hurraa.action;
 import javax.persistence.EntityManager;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.mentacontainer.Container;
 import org.mentacontainer.impl.MentaContainer;
