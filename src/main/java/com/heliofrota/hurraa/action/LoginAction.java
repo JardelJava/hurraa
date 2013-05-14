@@ -19,6 +19,8 @@
  */
 package com.heliofrota.hurraa.action;
 
+import static org.mentalog.Log.Warn;
+
 import javax.persistence.NoResultException;
 
 import org.mentawai.action.BaseLoginAction;
@@ -26,12 +28,10 @@ import org.mentawai.action.BaseLoginAction;
 import com.heliofrota.hurraa.business.UsuarioBusiness;
 import com.heliofrota.hurraa.entity.administracao.Autenticacao;
 
-import static org.mentalog.Log.*;
-
 /**
  * Action de login para validar a autenticação.
  *
- * @author helio frota
+ * @author helio frota http://www.heliofrota.com
  *
  */
 public class LoginAction extends BaseLoginAction {
@@ -59,4 +59,5 @@ public class LoginAction extends BaseLoginAction {
         }
         return SUCCESS;
     }
+    
 }
