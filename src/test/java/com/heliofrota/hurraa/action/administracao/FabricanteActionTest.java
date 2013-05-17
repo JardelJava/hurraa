@@ -22,14 +22,12 @@ package com.heliofrota.hurraa.action.administracao;
 import javax.persistence.EntityManager;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.mentacontainer.Container;
 import org.mentacontainer.impl.MentaContainer;
 import org.mentawai.db.JPAHandler;
 import org.mentawai.util.MockAction;
 
-import com.heliofrota.hurraa.action.administracao.FabricantesAction;
 import com.heliofrota.hurraa.business.InventarioBusiness;
 import com.heliofrota.hurraa.business.impl.InventarioBusinessImpl;
 import com.heliofrota.hurraa.entity.inventario.FabricanteTipo;

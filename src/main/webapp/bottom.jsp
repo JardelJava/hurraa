@@ -16,11 +16,8 @@
    You should have received a copy of the GNU General Public License
    along with Hurraa.  If not, see <http://www.gnu.org/licenses/>.
 --%>
-    <footer id="footer">
-      <!--<p class="pull-right"><a href="#">Topo</a></p>-->
-      <div class="links">
-        <a href="http://github.com/heliofrota/hurraa/" target="_blank">Source code</a>
-      </div>
+    <footer id="footer">     
+        <a href="http://github.com/heliofrota/hurraa/" target="_blank" class="git-logo"><span></span></a>      
     </footer>
 
 

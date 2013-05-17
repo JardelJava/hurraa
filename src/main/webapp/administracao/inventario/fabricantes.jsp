@@ -22,7 +22,7 @@
 
   <%@ include file="../../nav.jsp"%>
   
-  </br>
+  <br/>
   <div class="container" style="width: 98%;">
 
     <ul class="breadcrumb">
