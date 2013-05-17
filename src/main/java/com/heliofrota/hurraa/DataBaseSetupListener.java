@@ -2,7 +2,9 @@ package com.heliofrota.hurraa;
 
 import static org.mentalog.Log.Info;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.persistence.EntityManager;
@@ -15,6 +17,8 @@ import javax.servlet.annotation.WebListener;
 import org.eclipse.persistence.config.PersistenceUnitProperties;
 
 import com.heliofrota.hurraa.entity.administracao.Autenticacao;
+import com.heliofrota.hurraa.entity.administracao.Grupo;
+import com.heliofrota.hurraa.entity.administracao.Usuario;
 
 /**
  * Listener que cria o contexto do JPA para geração do DDL.
@@ -24,6 +28,8 @@ import com.heliofrota.hurraa.entity.administracao.Autenticacao;
  */
 @WebListener()
 public class DataBaseSetupListener implements ServletContextListener {
+
+	
 
 	@Override
 	public void contextDestroyed(ServletContextEvent arg0) {
@@ -41,12 +47,29 @@ public class DataBaseSetupListener implements ServletContextListener {
 
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("hurraa", persistenceUnitProperties);
 		emf.createEntityManager();
+		
 		EntityManager em = emf.createEntityManager(persistenceUnitProperties);
+		
+		Grupo group = new Grupo();
+		group.setId("1");
+		group.setNome("Administradores");
+		Usuario user = new Usuario();
+		user.setId("1");
+		user.setEmail("admin@hurraa.org");
+		user.setFone("null");		
+		List<Grupo> grupos = new ArrayList<Grupo>();
+		grupos.add(group);
+		user.setGrupos(grupos);
+		user.setNome("Admin");
+		user.setFone("9999-9999");
 		Autenticacao auth = new Autenticacao();
 		auth.setId("1");
-		auth.setEmail("admin@hurra.org");
-		auth.setSenha("admin");
+		auth.setEmail("admin@hurraa.org");
+		auth.setSenha("admin");	
+		auth.setUsuario(user);
 		em.getTransaction().begin();
+		em.persist(group);
+		em.persist(user);
 		em.persist(auth);
 		em.getTransaction().commit();		
 		emf.close();
