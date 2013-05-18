@@ -36,6 +36,7 @@
 				Oxygen Icons is licensed under a<br/> <a class="license"
 				rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
 				Creative Commons Attribution-ShareAlike 3.0 Unported License.</a>
+				<a class="license" href="https://github.com/logos">GitHub logotype is a trademark of GitHub Inc.</a>
 		</div>
 </section>
 

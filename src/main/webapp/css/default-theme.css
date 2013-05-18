@@ -85,22 +85,22 @@ div.logo {
 	font-size: 11px;
 	font-style: italic;
 	color: #777;
-	font-weight: normal;
+	font-weight: normal;	
 }
 
 div.logo img {
 	border: 0;
 	padding-bottom: 3px;
-	opacity: 0.5;
+	opacity: 0.5;	
 }
 
 div.logo a {
 	text-decoration: none;
-	color: 07f;
+	color: black;
 }
 
 div.logo a:hover {
-	text-decoration: underline;
+	color:#3e90ca;
 }
 
 /*===========
@@ -141,13 +141,23 @@ footer {
 }
 
 a.git-logo span {
-	border: 0; position : relative;
+	background: url("https://a248.e.akamai.net/assets.github.com/images/modules/header/github-logotype.png?9574c17c") no-repeat;
+	color: black;
+	border: 0;	
 	float: left;
 	margin: 0;
 	width: 94px;
 	height: 30px;
-	text-indent: -999px;
-	background: url("https://a248.e.akamai.net/assets.github.com/images/modules/header/github-logotype.png?9574c17c") no-repeat;
-	position: relative;
+	text-indent: -999px;		
 }
-a.git-logo:hover span { background-position: 0 -30px; }
+a.git-logo:hover span { 
+	background-position: 0 -30px;	
+	}
+a.git-logo{
+	color:black;
+	font-weight:bold;
+}	
+a.git-logo:hover {
+	text-decoration: none;
+	color:#3e90ca;	 
+	}	
