@@ -42,7 +42,7 @@ public class DataBaseSetupListener implements ServletContextListener {
 
 		Map<String, String> persistenceUnitProperties = new HashMap<>();
 		
-		persistenceUnitProperties.put(PersistenceUnitProperties.DDL_GENERATION, "create-tables");
+		persistenceUnitProperties.put(PersistenceUnitProperties.DDL_GENERATION, "drop-and-create-tables");
 		persistenceUnitProperties.put(PersistenceUnitProperties.DDL_GENERATION_MODE, "database");
 
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("hurraa", persistenceUnitProperties);
