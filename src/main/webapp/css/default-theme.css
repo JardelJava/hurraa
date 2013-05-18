@@ -41,18 +41,18 @@
 }
 
 .form-signin #user-icon {
-	background: url(../img/oxygen22x.png) no-repeat -184px -22px;
-	width: 24px;
-	height: 24px;
-	margin: -38px 0 12px 2px;
+	background: url(../img/oxygen22x.png) no-repeat -184px -23px;
+	width: 28px;
+	height: 28px;
+	margin: -38px 0 15px 2px;
 	display: block;
 }
 
 .form-signin #pswd-icon {
-	background: url(../img/oxygen22x.png) no-repeat -107px -76px;
-	width: 24px;
-	height: 24px;
-	margin: -38px 0 24px 2px;
+	background: url(../img/oxygen22x.png) no-repeat -105px -76px;
+	width: 28px;
+	height: 28px;
+	margin: -38px 0 0 2px;
 	display: block;
 }
 
@@ -72,7 +72,7 @@
 
 .form-signin button[type="submit"] {
 	font-size: large;
-	margin: -5px 0 12px 85px;
+	margin: 15px 0 15px 85px;
 }
 
 div.logo {
