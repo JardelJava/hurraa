@@ -136,7 +136,7 @@ footer {
 	bottom: 0;
 	margin: 0 auto;
 	width: 100%;	
-	padding: 5px 20px 5px 5px;
+	padding: 3px 20px 3px 5px;
 	border-top: 1px solid #e1e2e3
 }
 
@@ -144,10 +144,10 @@ a.git-logo span {
 	border: 0; position : relative;
 	float: left;
 	margin: 0;
-	width: 70px;
-	height: 22px;
+	width: 94px;
+	height: 30px;
 	text-indent: -999px;
-	background:
-		url(../img/github-logotype.png)	no-repeat;
+	background: url("https://a248.e.akamai.net/assets.github.com/images/modules/header/github-logotype.png?9574c17c") no-repeat;
 	position: relative;
 }
+a.git-logo:hover span { background-position: 0 -30px; }

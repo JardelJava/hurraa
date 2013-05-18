@@ -17,7 +17,7 @@
    along with Hurraa.  If not, see <http://www.gnu.org/licenses/>.
 --%>
     <footer id="footer">     
-        <a href="http://github.com/heliofrota/hurraa/" target="_blank" class="git-logo"><span></span></a>      
+        <a href="http://github.com/heliofrota/hurraa/" target="_blank" class="git-logo"><span></span>&copy</a>      
     </footer>
 
 
